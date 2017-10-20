@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Mortgage Servicing, Loan Servicing Software | Contact Information</title>
+	<meta name="author" content="Applied Business Software, Inc."/>
+	<meta name="description" content="Applied Business Software - Call us toll-free at 800-833-3343."/>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Links -->
+    <link href="css/camera.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/mailform.css?v=2"/>
+    <link rel="stylesheet" href="css/search.css"/>
+    <link rel="stylesheet" href="css/material-design.css"/>
+    <link rel="stylesheet" href="css/google-map.css">
+
+    <!--JS-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+
+
+    <!--[if lt IE 9]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src='js/device.min.js'></script>
+
+	<link rel="stylesheet" type="text/css" href="js/DataTables-1.10.4/media/css/jquery.dataTables.css" />
+    <link href="js/jquery-ui.structure.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" language="javascript" src="js/DataTables-1.10.4/media/js/jquery.dataTables.js"></script>
+    <script>
+        var ReplyMessageID;
+        ShowMessage = function(id) {
+            ReplyMessageID = id;
+            $('#messagesBody').html("Please wait...");
+            $('#messagesBody').load("MessageDetail.aspx?RecID=" + id + "&r=" + new Date().getTime(), function () { });
+        }
+
+        ShowMessageReply = function() {
+            $("#messageDiv").modal("hide");
+            $("#messageReplyDiv").modal();
+            $('#messagesReplyBody').html("Please wait...");
+            $('#messagesReplyBody').load("MessageReply.aspx?RecID=" + ReplyMessageID + "&r=" + new Date().getTime(), function () { });
+        }
+
+        SendReply = function() {
+            var replyMessage = $('textarea#replyMessage').serialize();
+
+            $.ajax({
+                url: "SendReply.aspx?RecID=" + ReplyMessageID + "&r=" + new Date().getTime(),
+                data: replyMessage,
+                success: function () {
+                    alert('Message sent successfully');
+                    $("#messageReplyDiv").modal("hide");
+                    document.location = 'Messages.aspx';
+                }
+            });
+
+        }
+
+        PrintContent = function () {
+            var DocumentContainer = document.getElementById('messagesBody');
+            var WindowObject = window.open("", "PrintWindow", "width=750,height=650,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes");
+            WindowObject.document.writeln(DocumentContainer.innerHTML);
+            WindowObject.document.close();
+            WindowObject.focus();
+            WindowObject.print();
+        }
+
+    </script>
+</head>
+<body>
+<div class="page">
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <form name="ctl00" method="post" action="./Logoff.aspx" id="ctl00" class="mailform2">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTUyMTU0NjEzNw9kFgICAQ9kFgICAQ9kFgICAQ9kFgYCAQ8WAh4HVmlzaWJsZWdkAgMPFgIfAGdkAgUPFgIfAGdkZE2hOquQQdM6nLCy9VeaEneszbivHELiiYhDda5DRUfX" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C04F0937" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAL+DeQ+mLwA3ERxZP7JgxXdomzVMwJ3/wDvyMPHBcg2spwOL9KV+KPneptghaGmD46fCS72vPiaQmQAonHOW0pn" />
+</div>
+    
+    <header class="header_border_none">
+        <div id="stuck_container" class="stuck_container">
+            <nav class="navbar navbar-default navbar-static-top ">
+                <div class="navbar-header h1">
+                    <div class="navbar-brand">
+                        <a data-type='rd-navbar-brand' href="#">
+                        <div style="display:inline-block;vertical-align:top;line-height:25px">
+                            <font style="color:#000099">Partners View Central</font><br />
+                            <font style="font-size:14px;color:#767676">Online account information</font>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+                <ul id="Header1_menu" class="navbar-nav sf-menu navbar-right" data-type="navbar">
+                    <li id="Header1_accountLink" class="dropdown">
+                        <a href="AcctOverview.aspx">Account</a>
+                    </li>
+
+                    <li id="Header1_messagesLink" class="dropdown">
+                        <a href="Messages.aspx">Messages</a>
+                        <ul class="dropdown-menu">
+                            <li >
+                                <a href="Announcement.aspx">Announcements</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li id="Header1_logoffLink">
+                        <a href="Logoff.aspx">Logoff</a>
+                    </li>
+
+
+                    <li >
+                      <div class="sform text-right">
+
+                      </div>
+                    </li>
+
+                </ul>
+
+
+
+
+
+            </nav>
+
+
+        </div>
+
+
+
+      <div class="modal fade" id="LoadingDiv" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body" id="LoadingBody" style="overflow-x:auto">
+                Processing, please wait...
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <script>
+            ShowLoading = function (x) {
+                if (x) {
+                    $("#LoadingDiv").modal();
+                } else {
+                    $("#LoadingDiv").modal("hide");
+                }
+            }
+
+        </script>
+    </header>
+
+
+
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+
+    <main>
+        <section class="cameraContact_container">
+            <div id="cameraContact" class="camera_wrap">
+                <div data-src="images/LOSHeader.jpg">
+                    <div class="camera_caption fadeIn">
+                        <div class="jumbotron">
+                            <div class="container">
+                                <h2>Logoff</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="well">
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="border:solid 0px red">
+					        <center><img src="graphics/lbl_thankyouforvisiting.gif" width="181" height="12" border="0" alt="Thank You for Visiting"></center><br>
+					        <font color="#888888">Thank you for visiting. We urge you to visit often as data is updated on a regular basis.</font><br><br>
+					        <div align="center">
+					            <input type="submit" name="off" value="Logoff" id="off" />
+					        </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        </form>
+
+    <!--========================================================
+                            FOOTER
+  =========================================================-->
+    
+
+    <footer>
+        <div class="footer_cnt">
+            <div class="container">
+                <div class="text-center">
+                        <h51><a href="Aboutus.aspx">About Us</a></h51>&nbsp;|&nbsp;
+                        <h51><a href="Privacy.aspx">Your Privacy</a></h51>&nbsp;|&nbsp;
+                        <h51><a href="terms.aspx">Terms of Use</a></h51>
+                </div>
+                <br />
+                <div class="text-center">
+                    <div class="copyright">
+                        <h6>Powered by The Mortgage Office - Copyright 2016 Applied Business Software, Inc. All Rights Reserved</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/tm-scripts.js"></script>
+<!-- </script> -->
+</body>
+</html>
