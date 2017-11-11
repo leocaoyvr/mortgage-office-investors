@@ -1,0 +1,23 @@
+/*
+/* Section
+/* =========================================== */
+
+.section-card {
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(241,137,3,0.20),
+              0 4px 4px 0 rgba(241,137,3,0.20),
+              0 8px 8px 0 rgba(241,137,3,0.20),
+              0 16px 16px 0 rgba(241,137,3,0.20),
+              0 32px 32px 0 rgba(241,137,3,0.20),
+              0 64px 64px 0 rgba(241,137,3,0.20);
+  border-radius: 8px;
+}
+
+.section-card-narrow {
+  @extend .section-card;
+
+  max-width: 970px;
+  margin-left: auto;
+  margin-right: auto;
+}
+

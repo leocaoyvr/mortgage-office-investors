@@ -1,0 +1,52 @@
+/*
+/* Breakpoints
+/* =========================================== */
+
+/* Device resolutions
+/* ------------------------------------------- */
+/* ipad pro              1024x1366
+/* ipad                  768x1024
+/* iphone 6p             414x736
+/* iphone 6              375x667
+/* iphone 5              320x568
+
+/* Break Points
+/* ------------------------------------------- */
+
+@mixin breakpoint($ratio) {
+  @if $ratio == 5 {
+    @media (min-width: 1601px) { @content ; }
+  }
+  @else if $ratio == 4 {
+    // optimal width
+    @media (max-width: 1600px) { @content ; }
+  }
+  @else if $ratio == 3 {
+    // design width: 1170ox
+    // smaller fonts
+    @media (max-width: 1200px) { @content ; }
+  }
+  @else if $ratio == 2.7 {
+    // narrow screen
+    // narrower layout
+    @media (max-width: 1080px)  { @content ; }
+  }
+  @else if $ratio == 2.5 {
+    // iPad horizontal
+    @media (max-width: 1000px)  { @content ; }
+  }
+  @else if $ratio == 2 {
+    // iPad portrait
+    // two column layout
+    @media (max-width: 800px)  { @content ; }
+  }
+  @else if $ratio == 1.1 {
+    // iPhone Plus
+    // one column layout
+    @media (max-width: 440px)  { @content ; }
+  }
+  @else if $ratio == 1 {
+    // iPhone 5, 6
+    @media (max-width: 400px)  { @content ; }
+  }
+}

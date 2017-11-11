@@ -1,23 +1,41 @@
-/**
- *
- * Custom styles
- * Author: Leo Cao (@vivianalive)
- * Email: leo@ilite.me
- * Website: http://ilite.me
- *
- */
+/*
+/* Style
+/* Custom styles for Amber investors' portal
+/* =========================================== */
 
+/*
+/* Base
+/* =========================================== */
 
+@import 'base/color';
+@import 'base/reset';
+@import 'base/type';
 
-.copyright { display: none;  }
+/* Ohters
+/* ------------------------------------------- */
 
-/*=============================================
-=            Section comment block            =
-=============================================*/
+@import 'util/atom';
 
+/* Utilities
+/* ------------------------------------------- */
 
+@import 'util/breakpoints';
+@import 'util/shadow';
 
-/*=====  End of Section comment block  ======*/
+/* Modules
+/* ------------------------------------------- */
 
+@import 'mod/button';
 
+/* Layout
+/* ------------------------------------------- */
 
+@import 'layout/default';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/section';
+
+/* Page
+/* ------------------------------------------- */
+
+@import 'page/login';

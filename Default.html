@@ -16,136 +16,100 @@
 </head>
 
 <body>
-  <!--============================
-  =            Header            =
-  =============================-->
-  <header>header</header>
+  <div class="body-inner">
+    <!--=============================================
+    =   Header
+    ==============================================-->
+    <header>
+      <div class="NavBar">
+        <img class="NavBar__logo"
+             src="/img/logo-amber-h-white-298x100.png"
 
-
-  <!--====  End of Header  ====-->
-
-  <!--==========================
-  =            Main            =
-  ===========================-->
-  <main>
-    <section class="FormLogin">
-      <form id="ctl00"
-            class="FormLogin__main"
-            action="https://www.partnersviewcentral.com/Default.aspx?ReturnUrl=%2f"
-            method="post"
-            name="ct100">
-        <h1 class="FormLogin__title">Investors Login</h1>
-
-        <input id="__VIEWSTATE"
-               name="__VIEWSTATE"
-               type="hidden"
-               value="/wEPDwULLTE1MzA4MTI5MTUPZBYGAgEPZBYCAgEPZBYGAgEPFgIeB1Zpc2libGVoZAIDDxYCHwBoZAIFDxYCHwBoZAIDDxYCHwBoZAIFDw8WAh8AZ2RkZHc6mg3+ncsJze+EtT+GkTwFQ5H8ISeJQ4K5v633aeC8">
-        <input id="__VIEWSTATEGENERATOR"
-               name="__VIEWSTATEGENERATOR"
-               type="hidden"
-               value="CA0B0334">
-        <input id="__EVENTVALIDATION"
-               name="__EVENTVALIDATION"
-               type="hidden"
-               value="/wEdAAXhU+lXP1dAp6rSvmN/zaQ0JSLWM8xsI60IUPezMXRf79J+252leowTJLKVLa4ccZQAMjbQFjCluKjLxH9cDdpLop4oRunf14dz2Zt2+QKDENQqSQcyizOicR4FiKe8xlufsy1m48t6mAUSBD/cvqUS">
-        <input name="form-type"
-               type="hidden"
-               value="contact">
-
-        <fieldset class="FormLogin__controls">
-          <div id="companyTR"
-               class="form-group hide">
-            <!-- hide by default, coz company ID is pre-set -->
-            <input id="strCompanyId"
-                   class="form-control"
-                   value="WMC"
-                   name="strCompanyId"
-                   placeholder="Company ID"
-                   type="text">
-          </div>
-          <div class="form-group">
-            <input id="strAccount"
-                   class="form-control"
-                   name="strAccount"
-                   placeholder="Username"
-                   type="text">
-          </div>
-          <div class="form-group">
-            <input id="strPIN"
-                   class="form-control"
-                   name="strPIN"
-                   placeholder="Password"
-                   type="password">
-          </div>
-
-          <button class="btn--primary">Login</button>
-        </fieldset>
-        <p class="FormLogin__note">
-          <a class="link--lesser"
-             href="https://amberfinancial.com/en/about#contact">Forgot password?</a>
-        </p>
-      </form>
+             alt="Amber Financial Services Copr. logo">
+        <ul class="NavBar__menu">
+          <li class="NavBar__menu__item">1.866.268.0328</li>
+        </ul>
       </div>
-      <div class="FormLogin__side"></div>
-    </section>
+    </header>
 
 
+    <!--=============================================
+    =   Main
+    ==============================================-->
+    <main>
+      <section class="FormLogin">
+        <form id="ctl00"
+              class="FormLogin__main"
+              action="https://www.partnersviewcentral.com/Default.aspx?ReturnUrl=%2f"
+              method="post"
+              name="ct100">
+          <h1 class="FormLogin__title">Investors Login</h1>
 
+          <input id="__VIEWSTATE"
+                 name="__VIEWSTATE"
+                 type="hidden"
+                 value="/wEPDwULLTE1MzA4MTI5MTUPZBYGAgEPZBYCAgEPZBYGAgEPFgIeB1Zpc2libGVoZAIDDxYCHwBoZAIFDxYCHwBoZAIDDxYCHwBoZAIFDw8WAh8AZ2RkZHc6mg3+ncsJze+EtT+GkTwFQ5H8ISeJQ4K5v633aeC8">
+          <input id="__VIEWSTATEGENERATOR"
+                 name="__VIEWSTATEGENERATOR"
+                 type="hidden"
+                 value="CA0B0334">
+          <input id="__EVENTVALIDATION"
+                 name="__EVENTVALIDATION"
+                 type="hidden"
+                 value="/wEdAAXhU+lXP1dAp6rSvmN/zaQ0JSLWM8xsI60IUPezMXRf79J+252leowTJLKVLa4ccZQAMjbQFjCluKjLxH9cDdpLop4oRunf14dz2Zt2+QKDENQqSQcyizOicR4FiKe8xlufsy1m48t6mAUSBD/cvqUS">
+          <input name="form-type"
+                 type="hidden"
+                 value="contact">
 
+          <fieldset class="FormLogin__controls">
+            <div id="companyTR"
+                 class="form-group hide">
+              <!-- hide by default, coz company ID is pre-set -->
+              <input id="strCompanyId"
+                     class="form-control"
+                     value="WMC"
+                     name="strCompanyId"
+                     placeholder="Company ID"
+                     type="text">
+            </div>
+            <div class="form-group">
+              <input id="strAccount"
+                     class="form-control"
+                     name="strAccount"
+                     placeholder="Username"
+                     type="text">
+            </div>
+            <div class="form-group">
+              <input id="strPIN"
+                     class="form-control"
+                     name="strPIN"
+                     placeholder="Password"
+                     type="password">
+            </div>
 
-    <section class="wellLogin">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-xs-12 center479 center991" style="border:solid 0px red">
-            <h3 class="text-left">Login</h3><br>
-            <form action="https://www.partnersviewcentral.com/Default.aspx?ReturnUrl=%2f" class="mailform3" id="ctl00" method="post" name="ctl00">
-              <div>
-                <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwULLTE1MzA4MTI5MTUPZBYGAgEPZBYCAgEPZBYGAgEPFgIeB1Zpc2libGVoZAIDDxYCHwBoZAIFDxYCHwBoZAIDDxYCHwBoZAIFDw8WAh8AZ2RkZHc6mg3+ncsJze+EtT+GkTwFQ5H8ISeJQ4K5v633aeC8">
-              </div>
-              <div>
-                <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="CA0B0334">
-                <input id="__EVENTVALIDATION" name="__EVENTVALIDATION" type="hidden" value="/wEdAAXhU+lXP1dAp6rSvmN/zaQ0JSLWM8xsI60IUPezMXRf79J+252leowTJLKVLa4ccZQAMjbQFjCluKjLxH9cDdpLop4oRunf14dz2Zt2+QKDENQqSQcyizOicR4FiKe8xlufsy1m48t6mAUSBD/cvqUS">
-              </div><input name="form-type" type="hidden" value="contact">
+            <div class="mfControls">
+              <button id="btnLogin"
+                      class="btn--primary"
+                      name="btnLogin"
+                      type="submit"
+                      value="Login">Login</button>
+              <p id="msg"
+                 class="helper-block"></p>
+            </div>
+          </fieldset>
+          <p class="FormLogin__note">
+            <a class="link--lesser"
+               href="https://amberfinancial.com/en/about#contact">Forgot password?</a>
+          </p>
+        </form>
+        <div class="FormLogin__side"></div>
+      </section>
+    </main>
 
-              <fieldset>
-                <p id="companyTR">
-                  <label data-add-placeholder="">
-                    <input id="strCompanyId" value="WMC" name="strCompanyId" placeholder="Company ID" type="text">
-                  </label>
-                </p>
-
-                <p>
-                  <label data-add-placeholder="">
-                    <input id="strAccount" name="strAccount" placeholder="User ID" type="text">
-                  </label>
-                </p>
-
-                <p>
-                  <label data-add-placeholder="">
-                    <input id="strPIN" name="strPIN" placeholder="PIN" type="password">
-                  </label>
-                </p>
-
-                <div class="mfControls">
-                  <input class="btn btn-default" id="btnLogin" name="btnLogin" type="submit" value="Login"><br>
-                  <br>
-                  <span id="msg"></span>
-                </div>
-              </fieldset>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!--====  End of Main  ====-->
-
-  <!--============================
-  =            Footer            =
-  =============================-->
-
-  <footer>footer</footer>
-
-  <!--====  End of Footer  ====-->
+    <!--=============================================
+    =   Footer
+    ==============================================-->
+    <footer>footer</footer>
+  </div>
 </body>
 </html>

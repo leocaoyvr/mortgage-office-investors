@@ -1,0 +1,129 @@
+/*
+/* Type
+/* =========================================== */
+
+/* Font Size
+/* ------------------------------------------- */
+/* 100  Extra Light or Ultra Light
+/* 200  Light or Thin
+/* 300  Book or Demi
+/* 400  Normal or Regular
+/* 500  Medium
+/* 600  Semibold, Demibold
+/* 700  Bold
+/* 800  Black, Extra Bold or Heavy
+/* 900  Extra Black, Fat, Poster or Ultra Black
+
+/* Base
+/* ------------------------------------------- */
+
+@font-face {
+  font-family: 'Greycliff CF';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Greycliff CF Light'),
+       local('Greycliff-CF-Light'),
+       url('../font/Greycliff-CF-Light.woff2') format('woff2'),
+       url('../font/Greycliff-CF-Light.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'Greycliff CF';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Greycliff CF Regular'),
+       local('Greycliff-CF-Regular'),
+       url('../font/Greycliff-CF-Regular.woff2') format('woff2'),
+       url('../font/Greycliff-CF-Regular.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'Greycliff CF';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Greycliff CF Medium'),
+       local('Greycliff-CF-Medium'),
+       url('../font/Greycliff-CF-Medium.woff2') format('woff2'),
+       url('../font/Greycliff-CF-Medium.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'Greycliff CF';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Greycliff CF Demi Bold'),
+       local('Greycliff-CF-Demi-Bold'),
+       url('../font/Greycliff-CF-Demi-Bold.woff2') format('woff2'),
+       url('../font/Greycliff-CF-Demi-Bold.woff')  format('woff');
+}
+
+@font-face {
+  font-family: 'Greycliff CF';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Greycliff CF Bold'),
+       local('Greycliff-CF-Bold'),
+       url('../font/Greycliff-CF-Bold.woff2') format('woff2'),
+       url('../font/Greycliff-CF-Bold.woff')  format('woff');
+}
+
+/* Base
+/* ------------------------------------------- */
+
+html { font-size: 16px; }
+
+
+body, pre {
+  font-family: 'Greycliff CF',
+               -apple-system, // Safari for macOS & iOS (San Francisco)
+               system-ui,     // Chrome for Windows, Linux & Android
+               'Segoe UI',    // Windows
+               'Helvetica Neue',
+               Arial,
+               sans-serif;
+  font-size: 1rem;            // 16px
+  line-height: 1.333;
+  font-weight: 400;
+  color: $cl-text-body;
+  background-color: #fff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heading
+/* ------------------------------------------- */
+
+h1, h2, h3,
+.h1, .h2, .h3 {
+  color: $cl-text-title;
+  line-height: 1.2;
+  font-family: 'Greycliff CF',
+               -apple-system, // Safari for macOS & iOS (San Francisco)
+               system-ui,     // Chrome for Windows, Linux & Android
+               'Segoe UI',    // Windows
+               'Helvetica Neue',
+               Arial,
+               sans-serif;
+}
+
+h1,
+.h1 {
+  font-size: 2.25rem; // 36px
+  font-weight: 400;
+}
+
+h2,
+.h2 {
+  font-size: 1.5rem; // 24px
+  font-weight: 500;
+}
+
+h3,
+.h3 {
+  font-size: 1.25rem; //20px
+  font-weight: 700;
+}
+
+
+

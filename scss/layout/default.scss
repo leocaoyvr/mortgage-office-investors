@@ -1,0 +1,33 @@
+/*
+/* Default
+/* =========================================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7
+              url('/img/bg-team-chatting-coffee-1600x2148.jpg')
+              center top
+              / cover
+              no-repeat;
+}
+
+.body-inner {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+header,
+main,
+footer {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  background-color: transparent;
+}
+

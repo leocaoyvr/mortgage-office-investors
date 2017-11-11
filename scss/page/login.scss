@@ -1,0 +1,30 @@
+/*
+/* Login
+/* =========================================== */
+
+.FormLogin {
+  @extend .section-card-narrow;
+
+  display: flex;
+}
+
+.FormLogin__main {
+  width: calc(400/970 * 100%);
+  padding-top: 8.25%;
+  padding-left: 8.25%;
+  padding-right: 8.25%;
+}
+
+.FormLogin__side {
+  width: calc(570/970 * 100%);
+  background: #f7f7f7
+              url('/img/pic-couple-sitting-discussing-570x500.jpg')
+              center top
+              / cover
+              no-repeat;
+}
+
+.FormLogin__title {
+  text-align: center;
+  white-space: nowrap;
+}
