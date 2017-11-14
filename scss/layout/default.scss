@@ -2,7 +2,7 @@
 /* Default
 /* =========================================== */
 
-body {
+.page {
   margin: 0;
   padding: 0;
   background: #f7f7f7
@@ -12,22 +12,22 @@ body {
               no-repeat;
 }
 
-.body-inner {
+.wrapper {
   margin-left: auto;
   margin-right: auto;
   padding-left: 5vw;
   padding-right: 5vw;
 }
 
-header,
-main,
-footer {
+.header,
+.main,
+.footer {
   max-width: 1160px;
   margin-left: auto;
   margin-right: auto;
 }
 
-main {
+.main {
   background-color: transparent;
 }
 
