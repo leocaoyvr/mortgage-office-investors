@@ -19,9 +19,8 @@ gulp.task('scss', function() {
   .pipe(sourcemaps.init())
   .pipe(scss({
     outputStyle: 'compressed',
-    errLogToConsole: true,
     includePaths: [bootstrapSassDir]
-  }))
+  }).on('error', scss.logError))
   .pipe(autoprefixer({ browsers: [ 'last 2 versions' ] }))
   .pipe(sourcemaps.write())
   .pipe(rename('custom.css'))
