@@ -9,12 +9,19 @@ var rename       = require('gulp-rename');
 var browserSync  = require('browser-sync');
 var runSequence  = require('run-sequence');
 
+// Dirs
+
+var bootstrapSassDir = './node_modules/bootstrap-sass/assets/stylesheets';
 
 // SCSS
 gulp.task('scss', function() {
   gulp.src('./scss/style.scss')
   .pipe(sourcemaps.init())
-  .pipe(scss({outputStyle: 'compressed'}).on('error', scss.logError))
+  .pipe(scss({
+    outputStyle: 'compressed',
+    errLogToConsole: true,
+    includePaths: [bootstrapSassDir]
+  }))
   .pipe(autoprefixer({ browsers: [ 'last 2 versions' ] }))
   .pipe(sourcemaps.write())
   .pipe(rename('custom.css'))
