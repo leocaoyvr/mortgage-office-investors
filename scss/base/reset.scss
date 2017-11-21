@@ -1,16 +1,16 @@
-/*
-/* Reset
-/* ========================= */
+//
+// Reset
+// ==============================================
 
-/* Misc
-/* ------------------------- */
+// Misc
+// ----------------------------------------------
 
 ul { list-style: none; }
 
 img { display: block; }
 
-/* Type
-/* ------------------------- */
+// Type
+// ----------------------------------------------
 
 h1, h2, h3, h4, h5, p, a, div, ul, ol, li, input, textarea, form, button, hr {
   margin: 0;
@@ -19,16 +19,16 @@ h1, h2, h3, h4, h5, p, a, div, ul, ol, li, input, textarea, form, button, hr {
   border: none;
 }
 
-/* Link
-/* ------------------------- */
+// Link
+// ----------------------------------------------
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Form
-/* ------------------------- */
+// Form
+// ----------------------------------------------
 
 // Remove browser default - focus blue outline
 textarea:focus,
@@ -62,13 +62,13 @@ textarea { resize: vertical; }
 
 // Select
 select:-moz-focusring {
-  /* remove firefox focus line */
+  // remove firefox focus line
   color: transparent;
   text-shadow: 0 0 0 #000;
 }
 
 select::-ms-expand {
-  /* remove ie select arrow */
+  // remove ie select arrow
   display: none;
 }
 

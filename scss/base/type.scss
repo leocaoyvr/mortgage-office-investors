@@ -1,21 +1,21 @@
-/*
-/* Type
-/* =========================================== */
+//
+// Type
+// ==============================================
 
-/* Font Size
-/* ------------------------------------------- */
-/* 100  Extra Light or Ultra Light
-/* 200  Light or Thin
-/* 300  Book or Demi
-/* 400  Normal or Regular
-/* 500  Medium
-/* 600  Semibold, Demibold
-/* 700  Bold
-/* 800  Black, Extra Bold or Heavy
-/* 900  Extra Black, Fat, Poster or Ultra Black
+// Font Size
+// ----------------------------------------------
+// 100  Extra Light or Ultra Light
+// 200  Light or Thin
+// 300  Book or Demi
+// 400  Normal or Regular
+// 500  Medium
+// 600  Semibold, Demibold
+// 700  Bold
+// 800  Black, Extra Bold or Heavy
+// 900  Extra Black, Fat, Poster or Ultra Black
 
-/* Base
-/* ------------------------------------------- */
+// Base
+// ----------------------------------------------
 
 @font-face {
   font-family: 'Greycliff CF';
@@ -67,8 +67,8 @@
        url('../font/Greycliff-CF-Bold.woff')  format('woff');
 }
 
-/* Base
-/* ------------------------------------------- */
+// Base
+// ----------------------------------------------
 
 html { font-size: 16px; }
 
@@ -91,8 +91,8 @@ body, pre {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Heading
-/* ------------------------------------------- */
+// Heading
+// ----------------------------------------------
 
 h1, h2, h3,
 .h1, .h2, .h3 {
