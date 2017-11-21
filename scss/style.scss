@@ -3,17 +3,16 @@
 // Custom styles for Amber investors' portal
 // ==============================================
 
-// Vendors
-// ----------------------------------------------
-
-@import '0_vend/normalize.css';
-
 // Base
 // ----------------------------------------------
 
-@import '1_base/reset';
-@import '1_base/color';
-@import '1_base/type';
+@import '0_base/color';
+@import '0_base/type';
+
+// Vendors
+// ----------------------------------------------
+
+@import '../node_modules/bootstrap-beta/scss/_reboot.scss';
 
 // Utilities
 // ----------------------------------------------
