@@ -1,7 +1,6 @@
 {
   "main": "gulpfile.js",
   "devDependencies": {
-    "bootstrap-beta": "^4.0.0-beta",
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
@@ -10,8 +9,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "jquery": "^3.2.1",
-    "popper.js": "^1.12.9",
     "run-sequence": "^2.2.0"
   },
   "scripts": {
