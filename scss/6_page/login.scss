@@ -2,20 +2,20 @@
 // Login
 // ==============================================
 
-.FormLogin {
-  @extend .section-card-narrow;
+.form-login {
+  @extend %section-card--narrow;
 
   display: flex;
 }
 
-.FormLogin__main {
+.form-login__main {
   width: calc(400/970 * 100%);
   padding-top: 8.25%;
   padding-left: 8.25%;
   padding-right: 8.25%;
 }
 
-.FormLogin__side {
+.form-login__side {
   width: calc(570/970 * 100%);
   background: #f7f7f7
               url('/img/pic-couple-sitting-discussing-570x500.jpg')
@@ -24,7 +24,7 @@
               no-repeat;
 }
 
-.FormLogin__title {
+.form-login__title {
   text-align: center;
   white-space: nowrap;
 }

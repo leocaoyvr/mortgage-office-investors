@@ -1,0 +1,15 @@
+//
+// Nav
+// Base nav style
+// ==============================================
+
+
+.nav {
+  border-bottom: none;
+}
+
+.nav__item {
+  @extend %h3;
+
+  color: #fff;
+}

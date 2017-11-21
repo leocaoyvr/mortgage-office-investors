@@ -3,6 +3,8 @@
 // ==============================================
 
 .header {
+  @extend .section;
+
   background-color: transparent;
   border: none;
   color: #fff;
@@ -24,9 +26,3 @@
 }
 
 .NavBar__menu {}
-
-.NavBar__menu__item {
-  @extend .h3;
-
-  color: #fff;
-}

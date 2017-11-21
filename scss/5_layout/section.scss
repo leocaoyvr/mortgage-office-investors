@@ -2,6 +2,13 @@
 // Section
 // ==============================================
 
+.section {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .section-card {
   background: #FFFFFF;
   box-shadow: 0 2px 4px 0 rgba(241,137,3,0.20),
@@ -13,8 +20,7 @@
   border-radius: 8px;
 }
 
-.section-card-narrow {
-  @extend .section-card;
+%section-card--narrow {
 
   max-width: 970px;
   margin-left: auto;
