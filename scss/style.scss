@@ -3,44 +3,45 @@
 // Custom styles for Amber investors' portal
 // ==============================================
 
-//
-// Base
-// ==============================================
-
-@import 'base/color';
-@import 'base/reset';
-@import 'base/type';
-
-// Ohters
+// Vendors
 // ----------------------------------------------
 
-@import 'util/atom';
+// @import '0_vend/';
+
+// Base
+// ----------------------------------------------
+
+@import '1_base/reset';
+@import '1_base/color';
+@import '1_base/type';
 
 // Utilities
 // ----------------------------------------------
 
-@import 'util/breakpoints';
-@import 'util/shadow';
+@import '2_util/breakpoints';
+@import '2_util/shadow';
 
 // Modules
 // ----------------------------------------------
 
-
-// Title
-// ----------------------------------------------
-
-
-@import 'mod/button';
+@import '3_mod/button';
 
 // Layout
 // ----------------------------------------------
 
-@import 'layout/default';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/section';
+@import '4_layout/default';
+@import '4_layout/header';
+@import '4_layout/footer';
+@import '4_layout/section';
 
 // Page
+// Page-specific styles
 // ----------------------------------------------
 
-@import 'page/login';
+@import '5_page/login';
+
+// Atomic
+// Quick styling and overriding
+// ----------------------------------------------
+
+@import '2_util/atom';

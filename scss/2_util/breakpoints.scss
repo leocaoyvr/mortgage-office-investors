@@ -7,6 +7,7 @@
 // ipad pro              1024x1366
 // ipad                  768x1024
 // iphone 6p             414x736
+// iPhone X              375x812
 // iphone 6              375x667
 // iphone 5              320x568
 
@@ -18,7 +19,7 @@
     @media (min-width: 1601px) { @content ; }
   }
   @else if $ratio == 4 {
-    // optimal width
+    // design width
     @media (max-width: 1600px) { @content ; }
   }
   @else if $ratio == 3 {
