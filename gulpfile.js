@@ -46,7 +46,7 @@ gulp.task('browserSync', function() {
 
   gulp.watch(['./*.html']).on('change', reloadBrowser);
   gulp.watch(['./img/*']).on('change', reloadBrowser);
-  gulp.watch(['./scss/**/*.scss'], ['scss']);
+  gulp.watch(['./scss/**/*'], ['scss']);
   gulp.watch(['./js/**/*.js']).on('change', reloadBrowser);
 });
 
