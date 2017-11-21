@@ -27,19 +27,23 @@
 
 @import '3_mod/button';
 
+// Block
+// ----------------------------------------------
+
+
 // Layout
 // ----------------------------------------------
 
-@import '4_layout/default';
-@import '4_layout/header';
-@import '4_layout/footer';
-@import '4_layout/section';
+@import '5_layout/default';
+@import '5_layout/header';
+@import '5_layout/footer';
+@import '5_layout/section';
 
 // Page
 // Page-specific styles
 // ----------------------------------------------
 
-@import '5_page/login';
+@import '6_page/login';
 
 // Atomic
 // Quick styling and overriding
