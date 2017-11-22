@@ -1,3 +1,23 @@
 //
 // Button
 // ==============================================
+
+
+.btn {}
+
+.btn--primary {
+  @extend %h3;
+
+  height: 2.5rem!important; // Force overriding bootstrap!important
+  border-radius: 4px;
+  background-color: $cl-brand;
+  border-width: 0;
+  color: #ffffff;
+  padding: 0 1rem;
+
+  &:hover {
+    color: #ffffff;
+    background-color: shade($cl-brand, 5%);
+
+  }
+}

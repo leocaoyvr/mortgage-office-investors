@@ -21,6 +21,9 @@
 
 @import '2_util/breakpoints';
 @import '2_util/shadow';
+@import '2_util/vendor-prefixes';
+@import '2_util/tint';
+@import '2_util/shade';
 
 // Modules
 // ----------------------------------------------
@@ -28,6 +31,8 @@
 @import '3_mod/button';
 @import '3_mod/nav';
 @import '3_mod/navbar';
+@import '3_mod/form';
+@import '3_mod/form-group';
 
 // Block
 // ----------------------------------------------

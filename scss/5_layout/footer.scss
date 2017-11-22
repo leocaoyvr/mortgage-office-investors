@@ -3,6 +3,19 @@
 // ==============================================
 
 .footer {
+  @extend %section;
+
   color: $cl-text-body;
   background-color: transparent;
 }
+
+.footer__copyright {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+

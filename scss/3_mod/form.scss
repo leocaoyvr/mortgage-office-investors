@@ -1,0 +1,23 @@
+//
+// Form
+// Form elements
+// ==============================================
+
+.form-control {
+  border-radius: 4px;
+  border-color: $cl-border;
+  box-shadow: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  height: 2.5rem;
+
+  &:focus,
+  &:hover {
+    border-color: $cl-brand;
+    box-shadow: none;
+  }
+}
+
+// Placeholder
+@include placeholder;

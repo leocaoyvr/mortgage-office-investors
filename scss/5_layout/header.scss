@@ -3,26 +3,11 @@
 // ==============================================
 
 .header {
-  @extend .section;
+  @extend %section;
 
   background-color: transparent;
   border: none;
-  color: #fff;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
-// NavBar
-// ----------------------------------------------
-
-.NavBar {
-  display: flex;
-  justify-content: space-between;
-}
-
-.NavBar__logo {
-  width: auto;
-  height: 2.5rem;
-}
-
-.NavBar__menu {}

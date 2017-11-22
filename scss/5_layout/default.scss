@@ -19,15 +19,9 @@
   padding-right: 5vw;
 }
 
-.header,
-.main,
-.footer {
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .main {
+  @extend %section;
+
   background-color: transparent;
 }
 

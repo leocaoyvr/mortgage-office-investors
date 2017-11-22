@@ -2,14 +2,19 @@
 // Section
 // ==============================================
 
-.section {
+%section {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
 }
 
+%section--narrow {
+  max-width: 970px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.section-card {
+%section--card {
   background: #FFFFFF;
   box-shadow: 0 2px 4px 0 rgba(241,137,3,0.20),
               0 4px 4px 0 rgba(241,137,3,0.20),
@@ -18,12 +23,7 @@
               0 32px 32px 0 rgba(241,137,3,0.20),
               0 64px 64px 0 rgba(241,137,3,0.20);
   border-radius: 8px;
+
+  // avoid content goes outside box
+  overflow: hidden;
 }
-
-%section-card--narrow {
-
-  max-width: 970px;
-  margin-left: auto;
-  margin-right: auto;
-}
-

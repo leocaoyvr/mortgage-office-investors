@@ -1,0 +1,8 @@
+//
+// Tint
+// Mix a color with white
+// ==============================================
+
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
