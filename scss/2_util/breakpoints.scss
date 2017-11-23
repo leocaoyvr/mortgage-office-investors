@@ -15,39 +15,34 @@
 // ----------------------------------------------
 
 @mixin breakpoint($ratio) {
-  @if $ratio == 5 {
-    @media (min-width: 1601px) { @content ; }
+  @if $ratio =='xxxl' {
+    @media all and (min-width: 1601px) { @content ; }
   }
-  @else if $ratio == 4 {
+  @else if $ratio == 'xxl' {
     // design width
-    @media (max-width: 1600px) { @content ; }
+    @media all and (max-width: 1600px) { @content ; }
   }
-  @else if $ratio == 3 {
-    // design width: 1170ox
-    // smaller fonts
-    @media (max-width: 1200px) { @content ; }
+  @else if $ratio == 'xl' {
+    // content area width: 1170ox
+    @media all and (max-width: 1200px) { @content ; }
   }
-  @else if $ratio == 2.7 {
+  @else if $ratio == 'lg' {
     // narrow screen
     // narrower layout
-    @media (max-width: 1080px)  { @content ; }
+    @media all and (max-width: 992px)  { @content ; }
   }
-  @else if $ratio == 2.5 {
-    // iPad horizontal
-    @media (max-width: 1000px)  { @content ; }
-  }
-  @else if $ratio == 2 {
+  @else if $ratio == 'md' {
     // iPad portrait
     // two column layout
-    @media (max-width: 800px)  { @content ; }
+    @media all and (max-width: 768px)  { @content ; }
   }
-  @else if $ratio == 1.1 {
+  @else if $ratio == 'sm' {
     // iPhone Plus
     // one column layout
-    @media (max-width: 440px)  { @content ; }
+    @media all and (max-width: 576px)  { @content ; }
   }
-  @else if $ratio == 1 {
+  @else if $ratio == 'xs' {
     // iPhone 5, 6
-    @media (max-width: 400px)  { @content ; }
+    @media all and (max-width: 400px)  { @content ; }
   }
 }
