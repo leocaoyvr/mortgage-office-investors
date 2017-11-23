@@ -6,6 +6,7 @@
 
 .nav {
   border-bottom: none;
+  display: flex;
 }
 
 .nav__item {
@@ -13,4 +14,8 @@
 
   color: #ffffff;
   font-weight: 700;
+  height: 100%;
+  display: flex!important; // Overriding bootstrap
+  justify-content: center;
+  flex-direction: column;
 }
