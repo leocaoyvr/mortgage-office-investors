@@ -10,6 +10,10 @@
               center top
               / cover
               no-repeat;
+
+  @include breakpoint(sm) {
+    background-size: 150% auto;
+  }
 }
 
 .wrapper {

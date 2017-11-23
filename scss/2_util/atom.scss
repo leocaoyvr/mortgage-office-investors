@@ -7,3 +7,23 @@
 // ----------------------------------------------
 
 .mb25              { margin-bottom: 2.5rem;} // 40px
+
+
+
+/* Positioning
+/* ------------------------------------------- */
+
+.pos-a             { position: absolute; }
+.pos-r             { position: relative; }
+.pos-f             { position: fixed;    }
+
+
+
+/* Displaying
+/* ------------------------------------------- */
+
+.hide              { display: none;         }
+.d-b               { display: block;        }
+.d-ib              { display: inline-block; }
+.d-tbl             { display: table;        }
+.d-tbc             { display: table-cell;   }

@@ -42,64 +42,66 @@
               action="https://www.partnersviewcentral.com/Default.aspx?ReturnUrl=%2f"
               method="post"
               name="ct100">
+
           <h1 class="form-login__title">Investors Login</h1>
+          <div class="form-login__inner">
+            <input id="__VIEWSTATE"
+                   name="__VIEWSTATE"
+                   type="hidden"
+                   value="/wEPDwULLTE1MzA4MTI5MTUPZBYGAgEPZBYCAgEPZBYGAgEPFgIeB1Zpc2libGVoZAIDDxYCHwBoZAIFDxYCHwBoZAIDDxYCHwBoZAIFDw8WAh8AZ2RkZHc6mg3+ncsJze+EtT+GkTwFQ5H8ISeJQ4K5v633aeC8">
+            <input id="__VIEWSTATEGENERATOR"
+                   name="__VIEWSTATEGENERATOR"
+                   type="hidden"
+                   value="CA0B0334">
+            <input id="__EVENTVALIDATION"
+                   name="__EVENTVALIDATION"
+                   type="hidden"
+                   value="/wEdAAXhU+lXP1dAp6rSvmN/zaQ0JSLWM8xsI60IUPezMXRf79J+252leowTJLKVLa4ccZQAMjbQFjCluKjLxH9cDdpLop4oRunf14dz2Zt2+QKDENQqSQcyizOicR4FiKe8xlufsy1m48t6mAUSBD/cvqUS">
+            <input name="form-type"
+                   type="hidden"
+                   value="contact">
 
-          <input id="__VIEWSTATE"
-                 name="__VIEWSTATE"
-                 type="hidden"
-                 value="/wEPDwULLTE1MzA4MTI5MTUPZBYGAgEPZBYCAgEPZBYGAgEPFgIeB1Zpc2libGVoZAIDDxYCHwBoZAIFDxYCHwBoZAIDDxYCHwBoZAIFDw8WAh8AZ2RkZHc6mg3+ncsJze+EtT+GkTwFQ5H8ISeJQ4K5v633aeC8">
-          <input id="__VIEWSTATEGENERATOR"
-                 name="__VIEWSTATEGENERATOR"
-                 type="hidden"
-                 value="CA0B0334">
-          <input id="__EVENTVALIDATION"
-                 name="__EVENTVALIDATION"
-                 type="hidden"
-                 value="/wEdAAXhU+lXP1dAp6rSvmN/zaQ0JSLWM8xsI60IUPezMXRf79J+252leowTJLKVLa4ccZQAMjbQFjCluKjLxH9cDdpLop4oRunf14dz2Zt2+QKDENQqSQcyizOicR4FiKe8xlufsy1m48t6mAUSBD/cvqUS">
-          <input name="form-type"
-                 type="hidden"
-                 value="contact">
+            <fieldset class="form-login__controls">
+              <div id="companyTR"
+                   class="form-group hide">
+                <!-- hide by default, coz company ID is pre-set -->
+                <input id="strCompanyId"
+                       class="form-control"
+                       value="WMC"
+                       name="strCompanyId"
+                       placeholder="Company ID"
+                       type="text">
+              </div>
+              <div class="form-group">
+                <input id="strAccount"
+                       class="form-control"
+                       name="strAccount"
+                       placeholder="Username"
+                       type="text">
+              </div>
+              <div class="form-group mb25">
+                <input id="strPIN"
+                       class="form-control"
+                       name="strPIN"
+                       placeholder="Password"
+                       type="password">
+              </div>
 
-          <fieldset class="form-login__controls">
-            <div id="companyTR"
-                 class="form-group hide">
-              <!-- hide by default, coz company ID is pre-set -->
-              <input id="strCompanyId"
-                     class="form-control"
-                     value="WMC"
-                     name="strCompanyId"
-                     placeholder="Company ID"
-                     type="text">
-            </div>
-            <div class="form-group">
-              <input id="strAccount"
-                     class="form-control"
-                     name="strAccount"
-                     placeholder="Username"
-                     type="text">
-            </div>
-            <div class="form-group mb25">
-              <input id="strPIN"
-                     class="form-control"
-                     name="strPIN"
-                     placeholder="Password"
-                     type="password">
-            </div>
-
-            <div class="form-group mfControls">
-              <button id="btnLogin"
-                      class="btn btn--primary"
-                      name="btnLogin"
-                      type="submit"
-                      value="Login">Login</button>
-              <p id="msg"
-                 class="helper-block"></p>
-            </div>
-          </fieldset>
-          <p class="form-login__note">
-            <a class="link--lesser"
-               href="https://amberfinancial.com/en/about#contact">Forgot password?</a>
-          </p>
+              <div class="form-group pos-r mfControls">
+                <button id="btnLogin"
+                        class="btn btn--primary form-login__btn"
+                        name="btnLogin"
+                        type="submit"
+                        value="Login">Login</button>
+                <p id="msg"
+                   class="helper-block form-login__helper"></p>
+              </div>
+            </fieldset>
+            <p class="form-login__note">
+              <a class="link"
+                 href="https://amberfinancial.com/en/about#contact">Forgot password?</a>
+            </p>
+          </div>
         </form>
         <div class="form-login__side"></div>
       </section>
@@ -109,7 +111,7 @@
     =   Footer
     ==============================================-->
     <footer class="footer">
-      <p class="footer__copyright">Copyright © 2018 Amber Financial Services Corp. All rights reserved.</p>
+      <p class="footer__copyright">Copyright © 2018 Amber Financial Services Corp. <span class="d-ib">All rights reserved.</span></p>
     </footer>
   </div>
 </body>

@@ -2,16 +2,26 @@
 // Login
 // ==============================================
 
+/* Form Login
+/* ------------------------------------------- */
+
 .form-login {
   @extend %section--narrow;
   @extend %section--card;
 
   display: flex;
+  align-content: stretch;
 }
 
 .form-login__main {
-  width: calc(400/970 * 100%);
+  max-width: 400px;
+  flex-grow: 1;
 
+  @include breakpoint(md) {
+    margin-left: auto;
+    margin-right: auto;
+
+  }
 }
 
 .form-login__side {
@@ -21,11 +31,34 @@
               center top
               / cover
               no-repeat;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+.form-login__inner {
+  width: 15rem;
+  margin-top: 20%;
+  margin-bottom: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  @include breakpoint(md) {
+    margin-top: 15%;
+    margin-bottom: 20%;
+  }
 }
 
 .form-login__title {
+  margin-top: 17.5%;
   text-align: center;
   white-space: nowrap;
+
+  @include breakpoint(md) {
+    margin-top: 15%;
+  }
 }
 
 .form-login__controls {
@@ -33,5 +66,23 @@
   &:nth-last-child(1) {
     margin-top: 2.5rem;
   }
+
+}
+
+.form-login__btn {
+  width: 100%;
+}
+
+.form-login__helper {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  top: -2rem;
+}
+
+.form-login__note {
+  margin-top: 1rem;
+  color: $cl-text-muted;
 
 }
