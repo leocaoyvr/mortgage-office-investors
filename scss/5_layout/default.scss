@@ -5,14 +5,57 @@
 .page {
   margin: 0;
   padding: 0;
-  background: #f7f7f7
-              url('/img/bg-team-chatting-coffee-1600x2148.jpg')
+  position: relative;
+}
+
+.bg-img-1 {
+  position: absolute;
+  top: 0;
+  // under .footer__copyright
+  z-index: -2;
+  width: 100%;
+  height: calc(100vw * 900 / 1600);
+  background: #ffc639
+              url('/img/bg-team-chatting-coffee-1600x900.jpg')
               center top
-              / cover
+              / 100% auto
               no-repeat;
 
+  clip-path: polygon(0 0,
+                   100% 0,
+                   100% calc(100% - 10vw),
+                   0 100%);
+
+  @include breakpoint(xxxl) {
+    height: 900px;
+  }
+
   @include breakpoint(sm) {
-    background-size: 150% auto;
+    background-size: auto 40vh;
+    height: 40vh;
+  }
+}
+
+.bg-img-2 {
+  position: absolute;
+  width: 100%;
+  height: calc(100vw * 1400 / 1600);
+  // under .bg-img-1
+  z-index: -3;
+  top: calc(100vw * 900 / 1600 - 10vw);
+  background: #f5f5f5
+              url('/img/bg-laptop-coffee-ghost-white-1600x1400.jpg')
+              center top
+              / 100% auto
+              no-repeat;
+
+
+  @include breakpoint(xxxl) {
+    top: calc(900px - 10vw);
+  }
+
+  @include breakpoint(sm) {
+    top: calc(40vh - 10vw);
   }
 }
 
@@ -21,6 +64,7 @@
   margin-right: auto;
   padding-left: 5vw;
   padding-right: 5vw;
+  margin-bottom: 10vw;
 }
 
 .main {
