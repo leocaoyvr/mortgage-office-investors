@@ -6,13 +6,23 @@
   margin: 0;
   padding: 0;
   position: relative;
+  overflow-y: visible;
 }
 
-.bg-img-1 {
+.page-bg {
   position: absolute;
   top: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
   // under .footer__copyright
   z-index: -2;
+}
+
+.page-bg__1 {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: calc(100vw * 900 / 1600);
   background: #ffc639
@@ -36,12 +46,12 @@
   }
 }
 
-.bg-img-2 {
+.page-bg__2 {
   position: absolute;
   width: 100%;
   height: calc(100vw * 1400 / 1600);
   // under .bg-img-1
-  z-index: -3;
+  z-index: -1;
   top: calc(100vw * 900 / 1600 - 10vw);
   background: #f5f5f5
               url('/img/bg-laptop-coffee-ghost-white-1600x1400.jpg')
@@ -64,7 +74,7 @@
   margin-right: auto;
   padding-left: 5vw;
   padding-right: 5vw;
-  margin-bottom: 10vw;
+  padding-bottom: 10vw;
 }
 
 .main {
