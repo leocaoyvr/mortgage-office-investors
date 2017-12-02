@@ -1,168 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Account Overview</title>
   <meta charset="utf-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width, initial-scale=1" name="viewport"><!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta content="telephone=no" name="format-detection">
-  <link href="images/favicon.ico" rel="icon" type="image/x-icon">
-  <meta content="Applied Business Software, Inc." name="author">
-  <meta content="Applied Business Software - Call us toll-free at 800-833-3343." name="description"><!-- Bootstrap -->
-  <link href="css/bootstrap.css" rel="stylesheet"><!-- Links -->
-  <link href="css/camera.css" rel="stylesheet">
-  <link href="css/mailform.css?v=2" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/material-design.css" rel="stylesheet">
-  <link href="css/google-map.css" rel="stylesheet"><!--JS-->
+  <title>Overview | Amber MIC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <script src="js/jquery.js">
-  </script>
-  <script src="js/jquery-migrate-1.2.1.min.js">
-  </script><!--[if lt IE 9]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
-            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
-                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
-        </a>
-    </div>
-    <script src="js/html5shiv.js"></script>
-    <![endif]-->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="img/logo-amber-icon-200x200.jpg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
 
-  <script src='js/device.min.js'>
-  </script>
-  <link href="js/DataTables-1.10.4/media/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
-  <link href="js/jquery-ui.structure.css" rel="stylesheet" type="text/css">
-  <script language="javascript" src="js/DataTables-1.10.4/media/js/jquery.dataTables.js" type="text/javascript">
-  </script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <!--
+  <link rel="stylesheet" type="text/css"
+        href="js/DataTables-1.10.4/media/css/jquery.dataTables.css">
+  -->
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript"
+          src="js/DataTables-1.10.4/media/js/jquery.dataTables.js" ></script>
 </head>
-<body>
-  <div class="page">
-    <form action="./AcctOverview.aspx" class="mailform2" id="ctl01" method="post" name="ctl01" onsubmit="ShowLoading(true)">
-      <div>
-        <input id="__EVENTTARGET" name="__EVENTTARGET" type="hidden" value=""> <input id="__EVENTARGUMENT" name="__EVENTARGUMENT" type="hidden" value=""> <input id="__LASTFOCUS" name="__LASTFOCUS" type="hidden" value=""> <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwUKLTE5NDk0NDczNA9kFgICAw9kFgoCAQ9kFgICAQ9kFgYCAQ8WAh4HVmlzaWJsZWdkAgMPFgIfAGdkAgUPFgIfAGdkAgMPZBYIAgEPDxYCHgRUZXh0BRZXb3JsZCBNb3J0Z2FnZSBDb21wYW55ZGQCAw8PFgIfAQUJU2FtIFNuZWFkZGQCBQ8PFgIfAQUKMTAvMTkvMjAxN2RkAgcPEA8WBh4NRGF0YVRleHRGaWVsZAUHQWNjb3VudB4ORGF0YVZhbHVlRmllbGQFC3NvdXJjZXJlY2lkHgtfIURhdGFCb3VuZGdkEBUFClNNSVRILVNURVYKSkFNRVMtUklDSwlNSUNLLVBISUwJU05FQUQtU0FND01hbmFnZSBBY2NvdW50cxUFIDAyQkYxRTgxMDE4NjRBMTY4RDEwRjY3OEEzN0FCM0NCIDVGMTEwOTVCRDNGMTRENzFCNDU2MENEMTY3MkFBMTNFIDhEOEU2RTcxNTVGMTRDNTE4M0RCOEI5NEYwQTU5QzFEIEUxMzAwRkNBQTQ0RTQ0RUJCNkQyRTcyRkFGQUY5NDA0D01hbmFnZSBBY2NvdW50cxQrAwVnZ2dnZxYBAgNkAgUPFgIeBWNsYXNzBQZhY3RpdmVkAgkPFgIfBQUedGFiLXBhbmUgZmFkZSBpbiBhY3RpdmUgYWN0aXZlFjxmDw8WAh8BBQlTYW0gU25lYWRkZAIBDw8WAh8BBQJNcmRkAgIPDxYCHwEFA1NhbWRkAgMPDxYCHwFlZGQCBA8PFgIfAQUFU25lYWRkZAIFDw8WAh8BBQlTTkVBRC1TQU1kZAIGDw8WAh8BBQoxMC8xOC8yMDE3ZGQCBw8PFgIfAQUNJDEsNTA0LDkzOC41NWRkAggPDxYCHwEFBSQwLjAwZGQCCQ8PFgIfAQUFJDAuMDBkZAIKDw8WAh8BBQUkMC4wMGRkAgsPDxYCHwEFBSQwLjAwZGQCDA8PFgIfAQUFJDAuMDBkZAINDw8WAh8BBQ0kMSw1MDQsOTM4LjU1ZGQCDg8PFgIfAQUSNiBQZXJpd2lua2xlIERyaXZlZGQCDw8PFgIfAQUHVG9yb250b2RkAhAPDxYCHwFlZGQCEQ8PFgIfAQUHTTRFIDJWNmRkAhIPDxYCHwEFDigzMTgpIDU1NS0xMjEyZGQCEw8PFgIfAQUOKDMxOCkgNTU1LTEyMTJkZAIUDw8WAh8BBQ4oOTcyKSA1NTUtMTIxMmRkAhUPDxYCHwEFDig5NzIpIDU1NS0xMjEyZGQCFg8PFgIfAQUbV29ybGQgUG9vbCBNb3J0Z2FnZSBDb21wYW55ZGQCFw8PFgIfAQUnMTIxMiBNYWluIFN0PGJyLz5Mb3MgQW5nZWxlcywgQ0EgIDkwMDQ1ZGQCGA8PFgIfAQUOKDMxMCkgNTU1LTU1NTVkZAIZDw8WAh8BBQ4oMzEwKSA0NDQtNDQ0NGRkAhoPDxYEHwEFDHBvb2xAd21jLmNvbR4LTmF2aWdhdGVVcmwFE21haWx0bzpwb29sQHdtYy5jb21kZAIbDw8WBB8BBSNodHRwOi8vd3d3LndvcmxkbW9ydGdhZ2Vjb21wYW55LmNvbR8GBSNodHRwOi8vd3d3LndvcmxkbW9ydGdhZ2Vjb21wYW55LmNvbWRkAhwPDxYCHwEFlgJUaGUgV29ybGQgTW9ydGdhZ2UgQ29tcGFueSAgcmVjb2duaXplcyB0aGF0IExvYW4gU2VydmljaW5nIGFuZCBUcnVzdCBEZWVkIEFkbWluaXN0cmF0aW9uIHJlcXVpcmUgYSBoaWdoIGRlZ3JlZSBvZiBwZXJzb25hbCBhdHRlbnRpb24uIE91ciBoaWdobHkgdHJhaW5lZCBhbmQgcHJvZmVzc2lvbmFsIHN0YWZmIGhhcyB0aGUga25vd2xlZGdlIGFuZCByZXNvdXJjZXMgbmVjZXNzYXJ5IHRvIHByb3ZpZGUgY3VzdG9taXplZCBwcm9ncmFtcyBmb3IgYWxsIGxvYW4gc2VydmljaW5nIG5lZWRzLmRkAh0PDxYEHghJbWFnZVVybAU2aHR0cDovL3d3dy5QYXJ0bmVyc1ZpZXdDZW50cmFsLmNvbS9Mb2dvc1x3bWNfc21hbGwuZ2lmHg1BbHRlcm5hdGVUZXh0BRtXb3JsZCBQb29sIE1vcnRnYWdlIENvbXBhbnlkZAILD2QWDAIBDw8WAh8BBQQyMDE3ZGQCAw8QDxYGHwIFAkFEHwMFEFBhcnRuZXJzaGlwUmVjSUQfBGdkEBUBGEZVTkQwNE1JQyAtIENhbmFkaWFuIE1JQxUBIDlFMjZGNjBFNjg5RjQ2NTU4QjNFRkNGMTFDRTUzNDEzFCsDAWcWAWZkAgUPZBYEZg9kFgICBA8WAh8AaGQCAQ9kFhZmD2QWAgIBDw8WAh8BBQ0kMSw1MDQsOTM4LjU1ZGQCAQ9kFgICAQ8PFgIfAQUFJDAuMDBkZAICD2QWAgIBDw8WAh8BBQUkMC4wMGRkAgMPZBYCAgEPDxYCHwEFBSQwLjAwZGQCBA8WAh8AaBYCAgEPDxYCHwEFBSQwLjAwZGQCBQ9kFgICAQ8PFgIfAQUFJDAuMDBkZAIGD2QWAgIBDw8WAh8BBQ0kMSw1MDQsOTM4LjU1ZGQCBw9kFgICAQ8PFgIfAQUMMSw1MDQsOTM4LjU1ZGQCCA9kFgICAQ8PFgIfAQUFJDEuMDBkZAIJD2QWAgIBDw8WAh8BBQUuMDAwJWRkAgoPZBYCAgEPDxYCHwEFBS41MDglZGQCBw8QZA8WBwIBAgICAwIEAgUCBgIHFgcQBQxMYXN0IDMwIGRheXMFDExhc3QgMzAgZGF5c2cQBQ1MYXN0IDMgbW9udGhzBQ1MYXN0IDMgbW9udGhzZxAFDUxhc3QgNiBtb250aHMFDUxhc3QgNiBtb250aHNnEAUOTGFzdCAxMiBtb250aHMFDkxhc3QgMTIgbW9udGhzZxAFDU1vbnRoIHRvIGRhdGUFDU1vbnRoIHRvIGRhdGVnEAUPUXVhcnRlciB0byBkYXRlBQ9RdWFydGVyIHRvIGRhdGVnEAUMWWVhciB0byBkYXRlBQxZZWFyIHRvIGRhdGVnFgFmZAIJDzwrABEEAA8WBB8EZx4LXyFJdGVtQ291bnRmZAEQFgICAwIHFgI8KwAFAQAWAh8AZzwrAAUBABYCHwBnFgICBgIGCxYEHghDc3NDbGFzc2UeBF8hU0ICAgwUKwAAZAIND2QWAgIBDzwrABEDAA8WBB8EZx8JAhFkARAWABYAFgAMFCsAABYCZg9kFiZmDw8WAh4MVGFibGVTZWN0aW9uCyopU3lzdGVtLldlYi5VSS5XZWJDb250cm9scy5UYWJsZVJvd1NlY3Rpb24AZGQCAQ9kFhJmD2QWAmYPFQEEMTAwMWQCAQ9kFgJmDxUBCzEwMCwwMDAuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQskMTAwLDAwMC4wMGQCBA9kFgJmDxUBCDEvMS8yMDEyZAIFD2QWAmYPFQEIMS8xLzIwMTJkAgYPZBYCZg8VAQUuMDAwJWQCBw9kFgJmDxUBAGQCCA9kFgJmDxUBBkFjdGl2ZWQCAg9kFhJmD2QWAmYPFQEEMTAwMmQCAQ9kFgJmDxUBCjUwLDAwMC4wMDBkAgIPZBYCZg8VAQUkMS4wMGQCAw9kFgJmDxUBCiQ1MCwwMDAuMDBkAgQPZBYCZg8VAQkxLzE1LzIwMTJkAgUPZBYCZg8VAQkxLzE1LzIwMTJkAgYPZBYCZg8VAQUuMDAwJWQCBw9kFgJmDxUBAGQCCA9kFgJmDxUBBkFjdGl2ZWQCAw9kFhJmD2QWAmYPFQEEMTAwM2QCAQ9kFgJmDxUBCzEwMCwwMDAuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQskMTAwLDAwMC4wMGQCBA9kFgJmDxUBCTIvMTUvMjAxMmQCBQ9kFgJmDxUBCTIvMTUvMjAxMmQCBg9kFgJmDxUBBzUwLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAgQPZBYSZg9kFgJmDxUBBDEwMDVkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEJOC8zMS8yMDEyZAIFD2QWAmYPFQEJOC8zMS8yMDEyZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAgUPZBYSZg9kFgJmDxUBBDEwMDdkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEJOS8zMC8yMDEyZAIFD2QWAmYPFQEJOS8zMC8yMDEyZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAgYPZBYSZg9kFgJmDxUBBDEwMDhkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEKMTAvMzEvMjAxMmQCBQ9kFgJmDxUBCjEwLzMxLzIwMTJkAgYPZBYCZg8VAQUuMDAwJWQCBw9kFgJmDxUBAGQCCA9kFgJmDxUBBkFjdGl2ZWQCBw9kFhJmD2QWAmYPFQEEMTAwOWQCAQ9kFgJmDxUBBzMzNS4wMDBkAgIPZBYCZg8VAQUkMS4wMGQCAw9kFgJmDxUBByQzMzUuMDBkAgQPZBYCZg8VAQoxMS8zMC8yMDEyZAIFD2QWAmYPFQEKMTEvMzAvMjAxMmQCBg9kFgJmDxUBBS4wMDAlZAIHD2QWAmYPFQEAZAIID2QWAmYPFQEGQWN0aXZlZAIID2QWEmYPZBYCZg8VAQQxMDEwZAIBD2QWAmYPFQEHMzM1LjAwMGQCAg9kFgJmDxUBBSQxLjAwZAIDD2QWAmYPFQEHJDMzNS4wMGQCBA9kFgJmDxUBCjEyLzMxLzIwMTJkAgUPZBYCZg8VAQoxMi8zMS8yMDEyZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAgkPZBYSZg9kFgJmDxUBBDEwMTFkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEJMS8zMS8yMDEzZAIFD2QWAmYPFQEJMS8zMS8yMDEzZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAgoPZBYSZg9kFgJmDxUBBDEwMTRkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEJMi8yOC8yMDEzZAIFD2QWAmYPFQEJMi8yOC8yMDEzZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAgsPZBYSZg9kFgJmDxUBBDEwMTZkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEJMy8zMS8yMDEzZAIFD2QWAmYPFQEJMy8zMS8yMDEzZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAgwPZBYSZg9kFgJmDxUBBDEwMThkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEJNC8zMC8yMDEzZAIFD2QWAmYPFQEJNC8zMC8yMDEzZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAg0PZBYSZg9kFgJmDxUBBDEwMjBkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEJNS8zMS8yMDEzZAIFD2QWAmYPFQEJNS8zMS8yMDEzZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAg4PZBYSZg9kFgJmDxUBBDEwMjJkAgEPZBYCZg8VAQczMzUuMDAwZAICD2QWAmYPFQEFJDEuMDBkAgMPZBYCZg8VAQckMzM1LjAwZAIED2QWAmYPFQEJNi8zMC8yMDEzZAIFD2QWAmYPFQEJNi8zMC8yMDEzZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAg8PZBYSZg9kFgJmDxUBBDEwMjNkAgEPZBYCZg8VAQsyNTAsMDAwLjAwMGQCAg9kFgJmDxUBBSQxLjAwZAIDD2QWAmYPFQELJDI1MCwwMDAuMDBkAgQPZBYCZg8VAQk4LzE1LzIwMTNkAgUPZBYCZg8VAQk4LzE1LzIwMTNkAgYPZBYCZg8VAQgxMDAuMDAwJWQCBw9kFgJmDxUBAGQCCA9kFgJmDxUBBkFjdGl2ZWQCEA9kFhJmD2QWAmYPFQEEMTAyNGQCAQ9kFgJmDxUBDTEsMDAwLDAwMC4wMDBkAgIPZBYCZg8VAQUkMS4wMGQCAw9kFgJmDxUBDSQxLDAwMCwwMDAuMDBkAgQPZBYCZg8VAQk4LzI1LzIwMTNkAgUPZBYCZg8VAQk4LzI1LzIwMTNkAgYPZBYCZg8VAQUuMDAwJWQCBw9kFgJmDxUBAGQCCA9kFgJmDxUBBkFjdGl2ZWQCEQ9kFhJmD2QWAmYPFQEEMTAyNmQCAQ9kFgJmDxUBCTEsMjUzLjU1MGQCAg9kFgJmDxUBBSQxLjAwZAIDD2QWAmYPFQEJJDEsMjUzLjU1ZAIED2QWAmYPFQEJOC8zMS8yMDEzZAIFD2QWAmYPFQEJOC8zMS8yMDEzZAIGD2QWAmYPFQEFLjAwMCVkAgcPZBYCZg8VAQBkAggPZBYCZg8VAQZBY3RpdmVkAhIPDxYCHwwLKwQCZBYSZg8PFggfAQUGVG90YWxzHwoFCXBsYWluYmx1ZR4JRm9udF9Cb2xkZx8LAoIQFgIeBXN0eWxlBVVib3JkZXItdG9wOnNvbGlkIDJweCAjMDAwMDAwICFpbXBvcnRhbnQ7O2JvcmRlci1ib3R0b206c29saWQgMnB4ICMwMDAwMDAgIWltcG9ydGFudDs7ZAIBDw8WCh8BBQsxLDUwNCw5MzguNh8KBQlwbGFpbmJsdWUeD0hvcml6b250YWxBbGlnbgsqKVN5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuSG9yaXpvbnRhbEFsaWduAx8NaB8LAoKQBBYCHw4FVWJvcmRlci10b3A6c29saWQgMnB4ICMwMDAwMDAgIWltcG9ydGFudDs7Ym9yZGVyLWJvdHRvbTpzb2xpZCAycHggIzAwMDAwMCAhaW1wb3J0YW50OztkAgIPDxYEHwoFCXBsYWluYmx1ZR8LAgIWAh8OBVVib3JkZXItdG9wOnNvbGlkIDJweCAjMDAwMDAwICFpbXBvcnRhbnQ7O2JvcmRlci1ib3R0b206c29saWQgMnB4ICMwMDAwMDAgIWltcG9ydGFudDs7ZAIDDw8WCh8BBQ0kMSw1MDQsOTM4LjU1HwoFCXBsYWluYmx1ZR8PCysFAx8NaB8LAoKQBBYCHw4FVWJvcmRlci10b3A6c29saWQgMnB4ICMwMDAwMDAgIWltcG9ydGFudDs7Ym9yZGVyLWJvdHRvbTpzb2xpZCAycHggIzAwMDAwMCAhaW1wb3J0YW50OztkAgQPDxYEHwoFCXBsYWluYmx1ZR8LAgIWAh8OBVVib3JkZXItdG9wOnNvbGlkIDJweCAjMDAwMDAwICFpbXBvcnRhbnQ7O2JvcmRlci1ib3R0b206c29saWQgMnB4ICMwMDAwMDAgIWltcG9ydGFudDs7ZAIFDw8WBB8KBQlwbGFpbmJsdWUfCwICFgIfDgVVYm9yZGVyLXRvcDpzb2xpZCAycHggIzAwMDAwMCAhaW1wb3J0YW50Oztib3JkZXItYm90dG9tOnNvbGlkIDJweCAjMDAwMDAwICFpbXBvcnRhbnQ7O2QCBg8PFgQfCgUJcGxhaW5ibHVlHwsCAhYCHw4FVWJvcmRlci10b3A6c29saWQgMnB4ICMwMDAwMDAgIWltcG9ydGFudDs7Ym9yZGVyLWJvdHRvbTpzb2xpZCAycHggIzAwMDAwMCAhaW1wb3J0YW50OztkAgcPDxYEHwoFCXBsYWluYmx1ZR8LAgIWAh8OBVVib3JkZXItdG9wOnNvbGlkIDJweCAjMDAwMDAwICFpbXBvcnRhbnQ7O2JvcmRlci1ib3R0b206c29saWQgMnB4ICMwMDAwMDAgIWltcG9ydGFudDs7ZAIIDw8WBB8KBQlwbGFpbmJsdWUfCwICFgIfDgVVYm9yZGVyLXRvcDpzb2xpZCAycHggIzAwMDAwMCAhaW1wb3J0YW50Oztib3JkZXItYm90dG9tOnNvbGlkIDJweCAjMDAwMDAwICFpbXBvcnRhbnQ7O2QYAgUPQ2VydGlmaWNhdGVHcmlkDzwrAAwBCAIBZAULSGlzdG9yeUdyaWQPPCsADAEIZmRrxJaSh4zxFKWUNHubOY3dD10IjzZs53AY86SYWIUHlQ==">
-      </div>
-      <script type="text/javascript">
-      //<![CDATA[
-      var theForm = document.forms['ctl01'];
-      if (!theForm) {
-      theForm = document.ctl01;
-      }
-      function __doPostBack(eventTarget, eventArgument) {
-      if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-      }
-      }
-      //]]>
-      </script>
-      <div>
-        <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="4407DBE9"> <input id="__EVENTVALIDATION" name="__EVENTVALIDATION" type="hidden" value="/wEdABUDimo6dZeMNIC6jiVlkwuz9Vrp8YnAWJWZLKO4Y5x1XeyXKbYhYun3bkWheBZ40umY3Aln6kKNLVmfDFSU+JJk5GAywH9vXbTRQ+3RHmhcYsIGbMagCpCGKHKzc/D+pWkSRdy+7rbjlNmZwTs3EGV/TyOQ6H0alfInEOo3EQ8fifkrkRBgxcm/IBoO8mCchUu9AbW8s/ukNywJQNH94WJFS250ZwsX+2IeUXx45n+kLQWBQY59iqnXpXW4B+dMA0B3jDjH4ZWjd8DO00LRxGenwlnDumwdPypHvOqKOs/2AOnrHWh41mhHBdH7b6omL9AwKAI47Xx1wG9Zulpu2j71tFnwGSx43smL2IVMwsieoise7MoCERfjDGr8cdFJv9gEiZXby40rB/+bgwA1e17+zfg78Z8BXhXifTCAVkevd+1G9U5UBoY5c9mJONCcB9LY3hXHwKVIQi5bA+kQHOCIhUcpm9v9EUGBcSv5x6gkmw==">
-      </div><!--========================================================
-                              HEADER
-    =========================================================-->
-      <header class="header_border_none">
-        <div class="stuck_container" id="stuck_container">
-          <nav class="navbar navbar-default navbar-static-top">
-            <div class="navbar-header h1">
-              <div class="navbar-brand">
-                <a data-type='rd-navbar-brand' href="#"></a>
-                <div style="display:inline-block;vertical-align:top;line-height:25px">
-                  <font style="color:#000099">Partners View Central</font><br>
-                  <font style="font-size:14px;color:#767676">Online account information</font>
-                </div>
-              </div>
-            </div>
-            <ul class="navbar-nav sf-menu navbar-right" data-type="navbar" id="Header1_menu">
-              <li class="dropdown" id="Header1_accountLink"><a href="AcctOverview.aspx">Account</a></li>
-              <li class="dropdown" id="Header1_messagesLink">
-                <a href="Messages.aspx">Messages</a>
-                <ul class="dropdown-menu">
-                  <li><a href="Announcement.aspx">Announcements</a></li>
-                </ul>
-              </li>
-              <li id="Header1_logoffLink"><a href="Logoff.aspx">Logoff</a></li>
-              <li>
-                <div class="sform text-right"></div>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="modal fade" id="LoadingDiv" role="dialog">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header"></div>
-              <div class="modal-body" id="LoadingBody" style="overflow-x:auto">
-                Processing, please wait...
-              </div>
-              <div class="modal-footer"></div>
-            </div>
-          </div>
-        </div>
-        <script>
-            ShowLoading = function (x) {
-                if (x) {
-                    $("#LoadingDiv").modal();
-                } else {
-                    $("#LoadingDiv").modal("hide");
-                }
-            }
 
+<body class="page">
+  <div class="wrapper">
+    <!--=============================================
+    =   Header
+    ==============================================-->
+    <header class="header">
+      <div class="nav-bar">
+        <img class="nav-bar__logo"
+             src="/img/logo-amber-h-white-298x100.png"
+             alt="Amber Financial Services Copr. logo">
+        <ul class="nav nav-bar__menu">
+          <li class="nav__item nav__item--primary">1.866.268.0328</li>
+          <li class="nav__item nav__item--primary">
+            <a class="nav__link" href="Logoff.aspx">Logoff</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!--=============================================
+    =   Main
+    ==============================================-->
+    <main class="main">
+      <form class="mailform2"
+            id="ctl01"
+            action="./AcctOverview.aspx"
+            method="post"
+            name="ctl01"
+            onsubmit="ShowLoading(true)">
+        <input id="__EVENTTARGET"
+               name="__EVENTTARGET"
+               type="hidden"
+               value="">
+        <input id="__EVENTARGUMENT"
+               name="__EVENTARGUMENT"
+               type="hidden"
+               value="">
+        <input id="__LASTFOCUS"
+               name="__LASTFOCUS"
+               type="hidden"
+               value="">
+        <input id="__VIEWSTATE"
+               name="__VIEWSTATE"
+               type="hidden"
+               value="">
+
+        <script type="text/javascript">
+        //<![CDATA[
+        var theForm = document.forms['ctl01'];
+        if (!theForm) {
+        theForm = document.ctl01;
+        }
+        function __doPostBack(eventTarget, eventArgument) {
+        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+          theForm.__EVENTTARGET.value = eventTarget;
+          theForm.__EVENTARGUMENT.value = eventArgument;
+          theForm.submit();
+        }
+        }
+        //]]>
         </script>
-      </header><!--========================================================
-                              CONTENT
-    =========================================================-->
-      <main>
-        <section class="cameraContact_container">
-          <div class="camera_wrap" id="cameraContact">
-            <div data-src="images/LOSHeader.jpg">
-              <div class="camera_caption fadeIn">
-                <div class="jumbotron">
-                  <div class="container">
-                    <h2>Account Overview</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="well headerBar">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="border:solid 0px red">
-                <span id="AccountInfo_CompanyName">World Mortgage Company</span>&nbsp;|&nbsp;<span id="AccountInfo_BorrowerName">Sam Snead</span>&nbsp;|&nbsp;Last updated: <span id="AccountInfo_LastPublished">10/19/2017</span>&nbsp;|&nbsp;Account:&nbsp;<select id="AccountInfo_AccountList" name="AccountInfo$AccountList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;AccountInfo$AccountList\&#39;,\&#39;\&#39;)&#39;, 0)" style="color:Black;">
-                  <option value="02BF1E8101864A168D10F678A37AB3CB">
-                    SMITH-STEV
-                  </option>
-                  <option value="5F11095BD3F14D71B4560CD1672AA13E">
-                    JAMES-RICK
-                  </option>
-                  <option value="8D8E6E7155F14C5183DB8B94F0A59C1D">
-                    MICK-PHIL
-                  </option>
-                  <option selected="selected" value="E1300FCAA44E44EBB6D2E72FAFAF9404">
-                    SNEAD-SAM
-                  </option>
-                  <option value="Manage Accounts">
-                    Manage Accounts
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="well">
+
+        <input id="__VIEWSTATEGENERATOR"
+               name="__VIEWSTATEGENERATOR"
+               type="hidden"
+               value="4407DBE9">
+        <input id="__EVENTVALIDATION"
+               name="__EVENTVALIDATION"
+               type="hidden"
+               value="">
+
+
+        <section class="">
           <div class="container">
             <div class="row">
               <div class="yui-navset" id="AccountOverview">
-                <ul class="nav nav-pills">
-                  <li class="active" id="overviewTab"><a data-toggle="pill" href="#overview">Partner</a></li>
-                  <li id="portfolioTab"><a data-toggle="pill" href="#portfolio">Portfolio</a></li>
-                </ul>
+                <div class="nav-outer">
+                  <ul class="nav nav--capsule">
+                    <li class="nav__item nav--capsule__item nav--capsule__item--active active"
+                        id="overviewTab">
+                        <a class="nav__link nav--capsule__link--first" data-toggle="pill" href="#overview">Overview</a></li>
+                    <li class="nav__item nav--capsule__item"
+                        id="portfolioTab">
+                        <a class="nav__link nav--capsule__link--last" data-toggle="pill" href="#portfolio">Portfolio</a></li>
+                  </ul>
+                </div>
+
                 <div class="tab-content">
-                  <div class="tab-pane fade in active active" id="overview" style="padding-top:15px">
-                    &nbsp;
+                  <div class="tab-pane fade in active" id="overview" style="padding-top:15px">
                     <div class="row">
                       <div class="col-md-6 col-sm-12 col-xs-12" style="border:solid 0px red">
                         <address class="addr1">
@@ -216,7 +166,6 @@
                                 </tr>
                               </table>
                             </dd>
-                            <dd><img border="0" height="11" src="images/ico_redflag.gif" width="10"><a class="blueLink" href="Announcement.aspx">There is a new company announcement</a></dd>
                           </dl>
                         </address>
                       </div>
@@ -388,75 +337,8 @@
                         </address>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-6 col-sm-12 col-xs-12" style="border:solid 0px red">
-                        <address class="addr1">
-                          <dl>
-                            <dt></dt>
-                            <dd>
-                              <table style="width:100%">
-                                <tr>
-                                  <td class="text-left"><span id="CompanyHeader">World Pool Mortgage Company</span></td>
-                                  <td class="text-right"></td>
-                                </tr>
-                              </table>
-                            </dd>
-                            <dd>
-                              <table class="altrowcolor" style="width:100%">
-                                <tr>
-                                  <td class="text-left">Address</td>
-                                  <td class="text-right"><span id="ContactNameAndAddress">1212 Main St<br>
-                                  Los Angeles, CA 90045</span></td>
-                                </tr>
-                              </table>
-                            </dd>
-                            <dd>
-                              <table class="" style="width:100%">
-                                <tr>
-                                  <td class="text-left">Phone</td>
-                                  <td class="text-right"><span id="ContactPhone">(310) 555-5555</span></td>
-                                </tr>
-                              </table>
-                            </dd>
-                            <dd>
-                              <table class="altrowcolor" style="width:100%">
-                                <tr>
-                                  <td class="text-left">Fax</td>
-                                  <td class="text-right"><span id="ContactFax">(310) 444-4444</span></td>
-                                </tr>
-                              </table>
-                            </dd>
-                            <dd>
-                              <table class="" style="width:100%">
-                                <tr>
-                                  <td class="text-left">Email</td>
-                                  <td class="text-right"><a class="blueLink" href="mailto:pool@wmc.com" id="ContactEmail">pool@wmc.com</a></td>
-                                </tr>
-                              </table>
-                            </dd>
-                            <dd>
-                              <table class="altrowcolor" style="width:100%">
-                                <tr>
-                                  <td class="text-left">URL</td>
-                                  <td class="text-right"><a class="blueLink" href="http://www.worldmortgagecompany.com" id="ContactURL">http://www.worldmortgagecompany.com</a></td>
-                                </tr>
-                              </table>
-                            </dd>
-                            <dd>
-                              <table class="" style="width:100%;border-bottom:solid 1px #EEEEEE">
-                                <tr>
-                                  <td class="text-left">Description</td>
-                                  <td class="text-right">
-                                  <textarea cols="20" id="CompanyDescription" name="CompanyDescription" readonly="readonly" rows="5" style="background-color:Transparent;border-style:None;width:100%;">The World Mortgage Company  recognizes that Loan Servicing and Trust Deed Administration require a high degree of personal attention. Our highly trained and professional staff has the knowledge and resources necessary to provide customized programs for all loan servicing needs.</textarea></td>
-                                </tr>
-                              </table>
-                            </dd>
-                          </dl>
-                        </address>
-                      </div>
-                      <div class="col-md-6 col-sm-12 col-xs-12 center991 center767 center479 text-center" style="border:solid 0px red"><img alt="World Pool Mortgage Company" id="CompanyLogo" src="http://www.PartnersViewCentral.com/Logos/wmc_small.gif" style="width:300px;border-width:0px;"></div>
-                    </div>
                   </div>
+
                   <div class="tab-pane fade in" id="portfolio" style="padding-top:15px">
                     <div class="col-md-12 col-sm-12 col-xs-12" style="overflow-x:auto">
                       <div style="float:left;vertical-align:bottom">
@@ -784,153 +666,48 @@
           </div>
         </section>
       </main>
-    </form><!--========================================================
-                            FOOTER
-  =========================================================-->
-    <footer>
-      <div class="footer_cnt">
-        <div class="container">
-          <div class="text-center">
-            <a href="Aboutus.aspx">About Us</a>&nbsp;|&nbsp; <a href="Privacy.aspx">Your Privacy</a>&nbsp;|&nbsp; <a href="terms.aspx">Terms of Use</a>
-          </div><br>
-          <div class="text-center">
-            <div class="copyright">
-              <h6>Powered by The Mortgage Office - Copyright 2016 Applied Business Software, Inc. All Rights Reserved</h6>
-            </div>
-          </div>
-        </div>
-      </div>
+    </form>
+
+    <!--=============================================
+    =   Footer
+    ==============================================-->
+    <footer class="footer">
+      <p class="footer__copyright">Copyright © <span id="copyright-year"></span> Amber Financial Services Corp. <span class="d-ib">All rights reserved.</span><br>Last updated: <span id="AccountInfo_LastPublished">10/19/2017</span></p>
     </footer>
   </div>
-  <div class="modal fade" id="impoundsDiv" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal" type="button">&times;</button>
-          <h4 class="modal-title">Impound Account</h4>
-        </div>
-        <div class="modal-body" id="impoundsBody" style="overflow-x:auto">
-          Loading...
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="armDiv" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal" type="button">&times;</button>
-          <h4 class="modal-title">ARM</h4>
-        </div>
-        <div class="modal-body" id="armBody">
-          Loading...
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="reservesDiv" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal" type="button">&times;</button>
-          <h4 class="modal-title">Reserve Account</h4>
-        </div>
-        <div class="modal-body" id="reservesBody" style="overflow-x:auto">
-          Loading...
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="constructionTrustDiv" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal" type="button">&times;</button>
-          <h4 class="modal-title">Construction Trust Account</h4>
-        </div>
-        <div class="modal-body" id="constructionTrustBody" style="overflow-x:auto">
-          Loading...
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="newReleaseDiv" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal" type="button">&times;</button>
-          <h4 class="modal-title">New Release</h4>
-        </div>
-        <div class="modal-body" id="newReleaseBody">
-          Loading...
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
-        </div>
-      </div>
-    </div>
 
   <div class="page-bg">
     <div class="page-bg__1"></div>
     <div class="page-bg__2"></div>
   </div>
-  <div class="modal fade" id="paymentsDiv" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal" type="button">&times;</button>
-          <h4 class="modal-title">Payments</h4>
-        </div>
-        <div class="modal-body" id="paymentsBody" style="overflow-x:auto">
-          Loading...
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
-        </div>
-      </div>
-    </div>
-  </div><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js">
-  </script>
-  <script src="js/tm-scripts.js">
-  </script> <!-- </script> -->
+
+  <!--=============================================
+  =   Scripts
+  ==============================================-->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/tm-scripts.js"></script>
 
   <script type="text/javascript">
-        $(document).ready(function () {
-            try {
-                $('#HistoryGrid').DataTable({
-                    "paging": true,
-                    "ordering": true,
-                    "info": true,
-                    "searching": true
-                });
-            } catch (e) {
-            }
-
-            try {
-                $('#CertificateGrid').DataTable({
-                    "paging": true,
-                    "ordering": true,
-                    "info": true,
-                    "searching": true
-                });
-            } catch (e) {
-            }
+    $(document).ready(function () {
+      try {
+        $('#HistoryGrid').DataTable({
+          "paging": true,
+          "ordering": true,
+          "info": true,
+          "searching": true
         });
+      } catch (e) {}
 
+      try {
+        $('#CertificateGrid').DataTable({
+          "paging": true,
+          "ordering": true,
+          "info": true,
+          "searching": true
+        });
+      } catch (e) {
+      }
+    });
   </script>
 </body>
 </html>
