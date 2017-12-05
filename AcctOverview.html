@@ -12,10 +12,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <!--
-  <link rel="stylesheet" type="text/css"
-        href="js/DataTables-1.10.4/media/css/jquery.dataTables.css">
-  -->
   <link rel="stylesheet" type="text/css" href="css/custom.css">
 
   <script type="text/javascript" src="js/jquery.js"></script>
@@ -98,14 +94,14 @@
         <div class="yui-navset" id="AccountOverview">
           <div class="nav-outer mb1_25">
             <ul class="nav nav--capsule">
-              <li class="nav__item nav--capsule__item active"
+              <li class="nav__item nav--capsule__item"
                   id="overviewTab">
                   <a class="nav__link nav--capsule__link nav--capsule__link--first"
                      data-toggle="pill"
                      href="#overview">
                      <i class="fa-user nav--capsule__icon"></i>Overview</a>
               </li>
-              <li class="nav__item nav--capsule__item"
+              <li class="nav__item nav--capsule__item active"
                   id="portfolioTab">
                   <a class="nav__link nav--capsule__link nav--capsule__link--last"
                      data-toggle="pill"
@@ -116,7 +112,10 @@
           </div>
 
           <div class="tab-content section-card">
-            <section class="tab-pane pane-overview fade in active" id="overview" style="padding-top:15px">
+            <!--
+            =   Pane Overview
+            ==============================================-->
+            <section class="tab-pane pane-overview fade in" id="overview" style="padding-top:15px">
               <div class="tab-pane__inner">
                 <table class="tbl">
                   <tbody>
@@ -233,324 +232,163 @@
               </div>
             </section>
 
-            <section class="tab-pane pane-portfolio fade in" id="portfolio" style="padding-top:15px">
-              <div class="col-md-12 col-sm-12 col-xs-12" style="overflow-x:auto">
-                <div style="float:left;vertical-align:bottom">
-                  <font class="TblHdr">Portfolio for Calendar Year <span id="PortfolioYear">2017</span></font>
-                </div>
-                <div style="float:right;vertical-align:bottom">
-                  <select id="ListOfPools" name="ListOfPools" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ListOfPools\&#39;,\&#39;\&#39;)&#39;, 0)">
-                    <option selected="selected" value="9E26F60E689F46558B3EFCF11CE53413">
-                      FUND04MIC - Canadian MIC
+            <!--
+            =   Pane Portfolio
+            ==============================================-->
+            <section class="tab-pane pane-portfolio fade in active" id="portfolio">
+              <div style="float:left;vertical-align:bottom">
+                Portfolio for Calendar Year <span id="PortfolioYear">2017</span>
+              </div>
+              <div style="float:right;vertical-align:bottom">
+                <select id="ListOfPools" name="ListOfPools" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ListOfPools\&#39;,\&#39;\&#39;)&#39;, 0)">
+                  <option selected="selected" value="9E26F60E689F46558B3EFCF11CE53413">
+                    FUND04MIC - Canadian MIC
+                  </option>
+                </select>
+              </div>
+              <table id="Table4">
+                <tr>
+                  <th align="center">Beg. Capital</th>
+                  <th align="center">Contributions</th>
+                  <th align="center">Withdrawals</th>
+                  <th align="center">Distributions</th>
+                  <th align="center">Income</th>
+                  <th align="center">Ending Capital</th>
+                  <th align="center" id="SharesTH">Shares</th>
+                  <th align="center" id="ShareValueTH">Share Value</th>
+                  <th align="center" id="IRRTH">YTD IRR</th>
+                  <th align="center" id="LTDIRRTH">ITD IRR</th>
+                </tr>
+                <tr>
+                  <td align="right"><span id="PBeginning">$1,504,938.55</span></td>
+                  <td align="right"><span id="PContributions">$0.00</span></td>
+                  <td align="right"><span id="PWithdrawals">$0.00</span></td>
+                  <td align="right"><span id="PDistributions">$0.00</span></td>
+                  <td align="right"><span id="PIncome">$0.00</span></td>
+                  <td align="right"><span id="PEnding">$1,504,938.55</span></td>
+                  <td align="right" id="SharesTD"><span id="PShares">1,504,938.55</span></td>
+                  <td align="right" id="ShareValueTD"><span id="PShareValue">$1.00</span></td>
+                  <td align="right" id="IRRTD"><span id="PIRR">.000%</span></td>
+                  <td align="right" id="LTDIRRTD"><span id="PLTDIRR">.508%</span></td>
+                </tr>
+              </table>
+
+
+              <table>
+                <tr>
+                  <td align="left">History&nbsp;&nbsp;&nbsp;</td>
+                  <td align="right"><b>Filter:</b> <select id="HistoryFilter" name="HistoryFilter" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;HistoryFilter\&#39;,\&#39;\&#39;)&#39;, 0)">
+                    <option selected="selected" value="All">
+                      All
                     </option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-12 col-sm-12 col-xs-12" style="overflow-x:auto">
-                <table border="0" cellpadding="0" cellspacing="1" class="padTable" id="Table4" style="border:0px solid #CCC" width="100%">
-                  <tr>
-                    <th align="center" height="17" nowrap="nowrap"><font class="whiteBold">Beg. Capital</font></th>
-                    <th align="center" height="17"><font class="whiteBold">Contributions</font></th>
-                    <th align="center" height="17"><font class="whiteBold">Withdrawals</font></th>
-                    <th align="center" height="17"><font class="whiteBold">Distributions</font></th>
-                    <th align="center" height="17" nowrap="nowrap"><font class="whiteBold">Income</font></th>
-                    <th align="center" height="17" nowrap="nowrap"><font class="whiteBold">Ending Capital</font></th>
-                    <th align="center" height="17" id="SharesTH" nowrap="nowrap"><font class="whiteBold">Shares</font></th>
-                    <th align="center" height="17" id="ShareValueTH" nowrap="nowrap"><font class="whiteBold">Share Value</font></th>
-                    <th align="center" height="17" id="IRRTH"><font class="whiteBold">YTD IRR</font></th>
-                    <th align="center" height="17" id="LTDIRRTH"><font class="whiteBold">ITD IRR</font></th>
-                  </tr>
-                  <tr bgcolor="#E6E5E5">
-                    <td align="right" height="17" nowrap="nowrap"><font class="plainblue"><span id="PBeginning" style="color:Black;font-weight:normal;">$1,504,938.55</span></font></td>
-                    <td align="right" height="17"><font class="plainblue"><span id="PContributions" style="color:Black;font-weight:normal;">$0.00</span></font></td>
-                    <td align="right" height="17"><font class="plainblue"><span id="PWithdrawals" style="color:Black;font-weight:normal;">$0.00</span></font></td>
-                    <td align="right" height="17"><font class="plainblue"><span id="PDistributions" style="color:Black;font-weight:normal;">$0.00</span></font></td>
-                    <td align="right" height="17" nowrap="nowrap"><font class="plainblue"><span id="PIncome" style="color:Black;font-weight:normal;">$0.00</span></font></td>
-                    <td align="right" height="17"><font class="plainblue"><span id="PEnding" style="color:Black;font-weight:normal;">$1,504,938.55</span></font></td>
-                    <td align="right" height="17" id="SharesTD" nowrap="nowrap"><font class="plainblue"><span id="PShares" style="color:Black;font-weight:normal;">1,504,938.55</span></font></td>
-                    <td align="right" height="17" id="ShareValueTD" nowrap="nowrap"><font class="plainblue"><span id="PShareValue" style="color:Black;font-weight:normal;">$1.00</span></font></td>
-                    <td align="right" height="17" id="IRRTD"><font class="plainblue"><span id="PIRR" style="color:Black;font-weight:normal;">.000%</span></font></td>
-                    <td align="right" height="17" id="LTDIRRTD"><font class="plainblue"><span id="PLTDIRR" style="color:Black;font-weight:normal;">.508%</span></font></td>
-                  </tr>
-                </table><br>
-              </div>
-              <div class="col-md-12 col-sm-12 col-xs-12" style="overflow-x:auto">
-                <table cellpadding="0" cellspacing="0" width="100%">
-                  <tr>
-                    <td align="left" width="10%"><font class="TblHdr">History&nbsp;&nbsp;&nbsp;</font></td>
-                    <td align="right"><font><b>Filter:</b></font> <select id="HistoryFilter" name="HistoryFilter" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;HistoryFilter\&#39;,\&#39;\&#39;)&#39;, 0)">
-                      <option selected="selected" value="All">
-                        All
-                      </option>
-                      <option value="Last 30 days">
-                        Last 30 days
-                      </option>
-                      <option value="Last 3 months">
-                        Last 3 months
-                      </option>
-                      <option value="Last 6 months">
-                        Last 6 months
-                      </option>
-                      <option value="Last 12 months">
-                        Last 12 months
-                      </option>
-                      <option value="Month to date">
-                        Month to date
-                      </option>
-                      <option value="Quarter to date">
-                        Quarter to date
-                      </option>
-                      <option value="Year to date">
-                        Year to date
-                      </option>
-                    </select></td>
-                  </tr>
-                </table>
-              </div>
-              <div class="col-md-12 col-sm-12 col-xs-12" style="overflow-x:auto">
+                    <option value="Last 30 days">
+                      Last 30 days
+                    </option>
+                    <option value="Last 3 months">
+                      Last 3 months
+                    </option>
+                    <option value="Last 6 months">
+                      Last 6 months
+                    </option>
+                    <option value="Last 12 months">
+                      Last 12 months
+                    </option>
+                    <option value="Month to date">
+                      Month to date
+                    </option>
+                    <option value="Quarter to date">
+                      Quarter to date
+                    </option>
+                    <option value="Year to date">
+                      Year to date
+                    </option>
+                  </select></td>
+                </tr>
+              </table>
+
+              <div>
                 <div>
-                  <table border="1" cellpadding="3" cellspacing="0" id="HistoryGrid" rules="all" style="background-color:White;border-color:#EEEEEE;border-style:None;width:100%;border-collapse:collapse;">
-                    <tr style="border-width:0px;border-style:Solid;">
+                  <table id="HistoryGrid">
+                    <tr>
                       <td colspan="8">No history available.</td>
                     </tr>
                   </table>
                 </div>
-                <div style="text-align:right;width:100%;border-top:1px solid #CCC;margin-top:0px;padding-top:10px;padding-bottom:0px;">
-                  <input class="linkButton" id="Button1" name="Button1" type="submit" value="Export to Excel">
-                </div>
-              </div><br>
+                <button id="Button1"
+                       class="btn"
+                       name="Button1"
+                       type="submit"
+                       value="Export to Excel">Export to Excel</button>
+              </div>
+
               <div id="CertificateTR">
-                <div class="col-md-12 col-sm-12 col-xs-12" style="overflow-x:auto">
-                  <table cellpadding="0" cellspacing="0" width="100%">
+                <div>
+                  <table>
                     <tr>
-                      <td align="left" width="10%"><font class="TblHdr">Certificates</font></td>
+                      <td align="left">Certificates</td>
                       <td align="right">&nbsp;</td>
                     </tr>
                   </table>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12" style="overflow-x:auto">
-                  <div>
-                    <table border="1" cellpadding="3" cellspacing="0" class="display" id="CertificateGrid" rules="all" style="background-color:White;border-color:#EEEEEE;border-style:None;width:100%;border-collapse:collapse;">
-                      <thead>
-                        <tr style="color:White;background-color:#000099;border-style:None;font-weight:normal;">
-                          <th scope="col" style="white-space:nowrap;">Certificate #</th>
-                          <th scope="col" style="white-space:nowrap;">No. of Shares</th>
-                          <th scope="col" style="white-space:nowrap;">Price</th>
-                          <th scope="col" style="white-space:nowrap;">Amount Paid</th>
-                          <th scope="col" style="white-space:nowrap;">Trans. Date</th>
-                          <th scope="col" style="white-space:nowrap;">Date Issued</th>
-                          <th scope="col" style="white-space:nowrap;">Reinv %</th>
-                          <th scope="col" style="white-space:nowrap;">Maturity Date</th>
-                          <th scope="col" style="white-space:nowrap;">Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1001</td>
-                          <td align="right" style="width:24%;" valign="bottom">100,000.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$100,000.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">1/1/2012</td>
-                          <td align="center" style="width:12%;" valign="bottom">1/1/2012</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#DFDFDF;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1002</td>
-                          <td align="right" style="width:24%;" valign="bottom">50,000.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$50,000.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">1/15/2012</td>
-                          <td align="center" style="width:12%;" valign="bottom">1/15/2012</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1003</td>
-                          <td align="right" style="width:24%;" valign="bottom">100,000.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$100,000.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">2/15/2012</td>
-                          <td align="center" style="width:12%;" valign="bottom">2/15/2012</td>
-                          <td align="right" style="width:12%;" valign="bottom">50.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#DFDFDF;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1005</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">8/31/2012</td>
-                          <td align="center" style="width:12%;" valign="bottom">8/31/2012</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1007</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">9/30/2012</td>
-                          <td align="center" style="width:12%;" valign="bottom">9/30/2012</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#DFDFDF;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1008</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">10/31/2012</td>
-                          <td align="center" style="width:12%;" valign="bottom">10/31/2012</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1009</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">11/30/2012</td>
-                          <td align="center" style="width:12%;" valign="bottom">11/30/2012</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#DFDFDF;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1010</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">12/31/2012</td>
-                          <td align="center" style="width:12%;" valign="bottom">12/31/2012</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1011</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">1/31/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">1/31/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#DFDFDF;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1014</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">2/28/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">2/28/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1016</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">3/31/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">3/31/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#DFDFDF;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1018</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">4/30/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">4/30/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1020</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">5/31/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">5/31/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#DFDFDF;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1022</td>
-                          <td align="right" style="width:24%;" valign="bottom">335.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$335.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">6/30/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">6/30/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1023</td>
-                          <td align="right" style="width:24%;" valign="bottom">250,000.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$250,000.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">8/15/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">8/15/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">100.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#DFDFDF;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1024</td>
-                          <td align="right" style="width:24%;" valign="bottom">1,000,000.000</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1,000,000.00</td>
-                          <td align="center" style="width:12%;" valign="bottom">8/25/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">8/25/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                        <tr style="background-color:#EEEEEE;border-style:None;white-space:nowrap;">
-                          <td align="center" style="width:12%;" valign="bottom">1026</td>
-                          <td align="right" style="width:24%;" valign="bottom">1,253.550</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1.00</td>
-                          <td align="right" style="width:12%;" valign="bottom">$1,253.55</td>
-                          <td align="center" style="width:12%;" valign="bottom">8/31/2013</td>
-                          <td align="center" style="width:12%;" valign="bottom">8/31/2013</td>
-                          <td align="right" style="width:12%;" valign="bottom">.000%</td>
-                          <td align="center" style="width:12%;" valign="bottom"></td>
-                          <td align="center" style="width:12%;" valign="bottom">Active</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <td class="plainblue" style="font-weight:bold;border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">Totals</td>
-                          <td align="right" class="plainblue" style="font-weight:normal;border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">1,504,938.6</td>
-                          <td class="plainblue" style="border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">&nbsp;</td>
-                          <td align="right" class="plainblue" style="font-weight:normal;border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">$1,504,938.55</td>
-                          <td class="plainblue" style="border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">&nbsp;</td>
-                          <td class="plainblue" style="border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">&nbsp;</td>
-                          <td class="plainblue" style="border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">&nbsp;</td>
-                          <td class="plainblue" style="border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">&nbsp;</td>
-                          <td class="plainblue" style="border-top:solid 2px #000000 !important;;border-bottom:solid 2px #000000 !important;;">&nbsp;</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                  <div style="text-align:right;width:100%;border-top:1px solid #CCC;margin-top:0px;padding-top:10px;padding-bottom:0px;">
-                    <input class="linkButton" id="exportCertificatesToExcel" name="exportCertificatesToExcel" type="submit" value="Export to Excel">
-                  </div>
+
+                  <button id="exportCertificatesToExcel"
+                          class="btn"
+                          name="exportCertificatesToExcel"
+                          type="submit"
+                          value="Export to Excel">Export to Excel</button>
+
+
+                  <table id="CertificateGrid">
+                    <thead>
+                      <tr>
+                        <th>Certificate #</th>
+                        <th>No. of Shares</th>
+                        <th>Price</th>
+                        <th>Amount Paid</th>
+                        <th>Trans. Date</th>
+                        <th>Date Issued</th>
+                        <th>Reinv %</th>
+                        <th>Maturity Date</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="center">1002</td>
+                        <td align="right">50,000.000</td>
+                        <td align="right">$1.00</td>
+                        <td align="right">$50,000.00</td>
+                        <td align="center">1/15/2012</td>
+                        <td align="center">1/15/2012</td>
+                        <td align="right">.000%</td>
+                        <td align="center"></td>
+                        <td align="center">Active</td>
+                      </tr>
+                      <tr>
+                        <td align="center">1002</td>
+                        <td align="right">50,000.000</td>
+                        <td align="right">$1.00</td>
+                        <td align="right">$50,000.00</td>
+                        <td align="center">1/15/2012</td>
+                        <td align="center">1/15/2012</td>
+                        <td align="right">.000%</td>
+                        <td align="center"></td>
+                        <td align="center">Active</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td>Totals</td>
+                        <td align="right">1,504,938.6</td>
+                        <td>&nbsp;</td>
+                        <td align="right">$1,504,938.55</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </tfoot>
+                  </table>
                 </div>
               </div>
             </section>
