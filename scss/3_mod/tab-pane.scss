@@ -1,0 +1,23 @@
+//
+// Tab Pane
+// ==============================================
+
+.tab-pane {
+  padding: 1.5vw 2.5vw 2.5vw 2.5vw!important; // Overriding bootstrap
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 48.5% 48.5%;
+    grid-column-gap: 3%;
+    grid-row-gap: 1.875vw;
+
+    @include breakpoint(md) {
+      grid-template-columns: none;
+    }
+  }
+
+  @include breakpoint(md) {
+    padding-left: 1rem!important; // Overriding bootstrap
+    padding-right: 1rem!important; // Overriding bootstrap
+  }
+}

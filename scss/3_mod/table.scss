@@ -1,0 +1,38 @@
+//
+// Table
+// ==============================================
+
+.tbl {
+  width: 100%;
+
+  & > tbody > tr > th {
+    border-bottom: 1px solid $cl-border-dark;
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+
+  & > tbody > tr > td {
+    border-bottom: 1px solid $cl-border-light;
+    padding: .5em 1em;
+  }
+}
+
+.tbl-title {
+  @extend %h2;
+
+  padding-left: .5em;
+
+  &:before {
+    content: '\f10c';
+    font-family: 'FontAwesome';
+    font-size: .75rem;
+    font-weight: bold;
+    color: $cl-text-brand;
+    position: relative;
+    vertical-align: middle;
+    top: -.125em;
+    left: -.75em;
+  }
+}
+
+.data-name { font-weight: 500; }
