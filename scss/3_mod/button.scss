@@ -3,20 +3,40 @@
 // ==============================================
 
 
-.btn {}
+.btn {
+  border-radius: 4px;
+  min-width: unset;
+}
+
+.btn__icon {
+  font-style: normal;
+  font-size: 1.125em;
+  margin-right: .25em;
+  position: relative;
+  top: .1em;
+}
 
 .btn--primary {
-  @extend %h3;
-
-  height: 2.5rem!important; // Force overriding bootstrap!important
-  border-radius: 4px;
   background-color: $cl-brand;
   border-width: 0;
   color: #ffffff;
-  padding: 0 1rem;
+  font-weight: 600;
 
   &:hover {
     color: #ffffff;
     background-color: shade($cl-brand, 5%);
   }
+}
+
+.btn--large {
+  @extend %h3;
+
+  height: 2.5rem!important;     // Overriding bootstrap
+  padding: 0 1rem;
+}
+
+.btn--small {
+  font-size: .875rem!important; // Overriding bootstrap
+  height: 2rem!important;       // Overriding bootstrap
+  padding: 0 .875rem;
 }
