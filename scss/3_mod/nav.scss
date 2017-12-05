@@ -34,14 +34,12 @@
 }
 
 .nav--capsule {
-  // border-radius: 4px;
-  overflow: hidden;
 }
 
 .nav--capsule__item {
   background-color: rgba(255, 255, 255, .75);
   color: $cl-text-minor;
-  font-weight: 600;
+  font-weight: 700;
 
   &:first-of-type {
     border-radius: 4px 0 0 4px;
@@ -51,20 +49,36 @@
     border-radius: 0 4px 4px 0;
   }
 
-  &--active {
+  &.active {
     color: $cl-text-body;
-    font-weight: 700;
     background-color: #ffffff;
     box-shadow: 0 2px 8px 0 transparentize($cl-brand-dark, .4);
+
+    .nav--capsule__icon { color: $cl-text-brand; }
   }
 }
 
 .nav--capsule__link {
-  &--first:hover {
+  padding: .75em 1.625em .75em 1.5em!important; // Overriding bootstrap
+
+  &--first:hover,
+  &--first:focus, {
     border-radius: 4px 0 0 4px;
   }
 
-  &--last:hover {
+  &--last:hover,
+  &--last:focus {
     border-radius: 0 4px 4px 0;
   }
+
+  &--first:focus,
+  &--last:focus {
+    background-color: #ffffff!important; // Overriding bootstrap
+  }
+}
+
+.nav--capsule__icon {
+  font-size: 1.125em;
+  font-style: normal;
+  margin-right: .5em;
 }
