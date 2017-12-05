@@ -27,3 +27,8 @@
   // avoid content goes outside box
   overflow: hidden;
 }
+
+.section-card {
+  @extend %section;
+  @extend %section--card;
+}

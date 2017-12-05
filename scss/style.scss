@@ -34,6 +34,8 @@
 @import '3_mod/navbar';
 @import '3_mod/form';
 @import '3_mod/form-group';
+@import '3_mod/table';
+@import '3_mod/tab-pane';
 
 // Block
 // ----------------------------------------------
@@ -52,7 +54,8 @@
 // Page-specific styles
 // ----------------------------------------------
 
-@import '6_page/login';
+@import '6_page/Default';
+@import '6_page/AcctOverview';
 
 // Atomic
 // Quick styling and overriding
