@@ -3,7 +3,7 @@
 // ==============================================
 
 .tab-pane {
-  padding: 1.5vw 2.5vw 2.5vw 2.5vw!important; // Overriding bootstrap
+  padding: 2% 3.4% 3.4% 3.4%!important; // Overriding bootstrap
 
   &__inner {
     display: grid;
@@ -19,5 +19,6 @@
   @include breakpoint(md) {
     padding-left: 1rem!important; // Overriding bootstrap
     padding-right: 1rem!important; // Overriding bootstrap
+    padding-bottom: 1.5rem!important; // Overriding bootstrap
   }
 }
