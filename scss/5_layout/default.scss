@@ -75,6 +75,11 @@
   padding-left: 5vw;
   padding-right: 5vw;
   padding-bottom: 10vw;
+
+  @include breakpoint(sm) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .main {
