@@ -1,0 +1,71 @@
+//
+// Data Tables Custom
+// ==============================================
+
+// Sortings
+// ----------------------------------------------
+
+.tbl th.sorting,
+.tbl th.sorting_asc,
+.tbl th.sorting_desc {
+}
+
+.tbl th.sorting {
+  background-size: .75em .75em!important;
+  background-image: url('/img/icn-unsorted-38x38.png')!important;
+}
+
+.tbl th.sorting_asc {
+  background-size: .625em .625em!important;
+  background-image: url('/img/icn-sort-up-38x38.png')!important;
+}
+
+.tbl th.sorting_desc {
+  background-size: .625em .625em!important;
+  background-image: url('/img/icn-sort-down-38x38.png')!important;
+}
+
+// Pagination
+// ----------------------------------------------
+
+.dataTables_paginate {
+  padding-top: 1rem!important;
+}
+
+.paginate_button {
+  @extend %btn;
+
+  font-size: .875rem;
+  font-weight: 700;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  border-width: 0!important;
+  background: transparent!important;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #ffffff!important;
+    background-color: $cl-brand!important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: $cl-text-body!important;
+    background-color: $cl-bg!important;
+}
+
+// Entry Counter
+// ----------------------------------------------
+
+.dataTables_info {
+  color: $cl-text-minor!important;
+  font-size: .875rem;
+  padding-top: 1.25rem!important;
+}
+
+.dataTables_length,
+.dataTables_filter {
+  @extend %hide-on-mobile;
+}

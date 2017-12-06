@@ -15,7 +15,10 @@
 .mb1_25    { margin-bottom: 1.25rem;     } // 20px
 .mb2_5     { margin-bottom: 2.5rem;      } // 40px
 .ml0       { margin-left: 0;             }
+.ml_25     { margin-left: .25rem;        } // 4px
+.ml_5      { margin-left: .5rem;         } // 8px
 .mr0       { margin-right: 0;            }
+.mr_25     { margin-right: .25rem;       } // 4px
 
 .p0        { padding: 0;                 }
 .pt0       { padding-top: 0;             }
@@ -105,10 +108,10 @@
 
 .lh1       { line-height: 1;             }
 
-.h1        { @extend %h1;                }
-.h2        { @extend %h2;                }
-.h3        { @extend %h3;                }
-.h4        { @extend %h4;                }
+.hd1       { @extend %h1;                }
+.hd2       { @extend %h2;                }
+.hd3       { @extend %h3;                }
+.hd4       { @extend %h4;                }
 
 .ta-c      { text-align: center;         }
 .ta-l      { text-align: left;           }
@@ -144,6 +147,7 @@
 .w100vw    { width: 100vw;               }
 
 .h0        { height: 0;                  }
+.h2        { height: 2rem;               } // 32px
 .h-a       { height: auto;               }
 .mih-a     { min-height: auto;           }
 .mah-a     { max-height: auto;           }

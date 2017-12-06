@@ -13,10 +13,12 @@
 
     @include breakpoint(md) {
       grid-template-columns: none;
+      grid-row-gap: 1rem;
     }
   }
 
   @include breakpoint(md) {
+    margin-top: .5rem!important; // Overriding bootstrap
     padding-left: 1rem!important; // Overriding bootstrap
     padding-right: 1rem!important; // Overriding bootstrap
     padding-bottom: 1.5rem!important; // Overriding bootstrap

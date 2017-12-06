@@ -1,0 +1,14 @@
+//
+// Spacing
+// Responsive spacers; Avoid margin-top
+// ==============================================
+
+.spacer-block--mb2_5     { margin-bottom:   2.5rem; } // 40px
+.spacer-block--mb2       { margin-bottom:     2rem; } // 32px
+.spacer-block--mb1_25    { margin-bottom:  1.25rem; } // 20px
+
+@include breakpoint(sm)  {
+  .spacer-block--mb2_5   { margin-bottom:   1.5rem; } // 24px
+  .spacer-block--mb2     { margin-bottom:  1.25rem; } // 20px
+  .spacer-block--mb1_25  { margin-bottom:     1rem; } // 16px
+}

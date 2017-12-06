@@ -22,6 +22,15 @@
 // Placeholder
 @include placeholder;
 
+.custom-select {
+  @extend .btn;
+  @extend .btn--light;
+  @extend .btn--small;
+  @include placeholder($cl-text-body);
+
+  color: $cl-text-body;
+}
+
 /* Hacks & Fiexes
 /* ------------------------------------------- */
 

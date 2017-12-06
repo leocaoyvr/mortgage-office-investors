@@ -3,9 +3,10 @@
 // ==============================================
 
 
-.btn {
+.btn,
+%btn {
   border-radius: 4px;
-  min-width: unset;
+  min-width: initial;
 }
 
 .btn__icon {
@@ -26,6 +27,10 @@
     color: #ffffff;
     background-color: shade($cl-brand, 5%);
   }
+}
+
+.btn--light {
+  border: 1px solid $cl-border;
 }
 
 .btn--large {

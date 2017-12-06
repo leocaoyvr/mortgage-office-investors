@@ -9,6 +9,7 @@
 .tbl {
   width: 100%;
 
+  & > thead > tr > th,
   & > tbody > tr > th {
     border-bottom: 1px solid $cl-border-dark;
     padding-top: .5em;
@@ -17,9 +18,16 @@
     &.bdw0 { border-width: 0; }
   }
 
+  & > tfoot > tr > td,
   & > tbody > tr > td {
     border-bottom: 1px solid $cl-border-light;
     padding: .5em 1em;
+  }
+
+  & > tfoot > tr > td {
+    font-weight: 700;
+    border-top-color: $cl-border-light;
+    background-color: $cl-bg-light;
   }
 
   // container of child tables
@@ -47,7 +55,7 @@
   }
 
   &__td-title {
-    font-weight: 500;
+    font-weight: 500!important;
     white-space: nowrap;
   }
 }

@@ -1,0 +1,10 @@
+//
+// Mobile
+// Mobile specific styles
+// ==============================================
+
+// Hide elements on mobile devices
+.hide-on-mobile,
+%hide-on-mobile {
+  @include breakpoint(sm) { display: none; }
+}
