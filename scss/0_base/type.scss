@@ -14,6 +14,8 @@
 // 800  Black, Extra Bold or Heavy
 // 900  Extra Black, Fat, Poster or Ultra Black
 
+@import '2_util/breakpoints';
+
 // Base
 // ----------------------------------------------
 
@@ -70,7 +72,12 @@
 // Base
 // ----------------------------------------------
 
-html { font-size: 16px; }
+html {
+  font-size: 16px;
+
+  @include breakpoint(sm) { font-size: 15px; }
+  @include breakpoint(xs) { font-size: 13px; }
+}
 
 
 body, pre {
@@ -93,8 +100,6 @@ body, pre {
 
 // Heading
 // ----------------------------------------------
-
-@import '2_util/breakpoints';
 
 h1, h2, h3,
 %h1, %h2, %h3 {
