@@ -62,6 +62,7 @@
 }
 
 .form-login__controls {
+  label { width: 100%; }
 
   &:nth-last-child(1) {
     margin-top: 2.5rem;
