@@ -67,8 +67,9 @@
   &:nth-last-child(1) {
     margin-top: 2.5rem;
   }
-
 }
+
+.form-login__controls label { width: 100%; }
 
 .form-login__btn {
   width: 100%;
